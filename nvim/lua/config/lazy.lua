@@ -45,3 +45,31 @@ require("lazy").setup({
     },
   },
 })
+
+-- Define the theme and set the button to select the theme
+Ice = {}
+
+require("config.colorscheme")
+
+if not Ice.colorscheme then
+  local colorscheme_cache = vim.fn.stdpath("data") .. "/colorscheme"
+  local colorscheme_cache_file = io.open(colorscheme_cache, "r")
+  if colorscheme_cache_file ~= nil then
+    local colorscheme = colorscheme_cache_file:read("*a")
+    colorscheme_cache_file:close()
+    Ice.colorscheme = Ice.colorschemes[colorscheme]
+  else
+    Ice.colorscheme = Ice.colorschemes["tokyonight"]
+  end
+end
+
+if Ice.colorscheme then
+  require("config.utils").colorscheme(Ice.colorscheme)
+end
+
+vim.api.nvim_set_keymap(
+  "n",
+  "ee",
+  ':lua require("config.utils").select_colorscheme()<CR>',
+  { noremap = true, silent = true }
+)
