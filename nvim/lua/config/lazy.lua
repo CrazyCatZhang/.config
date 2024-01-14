@@ -34,6 +34,7 @@ require("lazy").setup({
       disabled_plugins = {
         "gzip",
         "dropbar",
+        "vim-instant-markdown",
         -- "matchit",
         -- "matchparen",
         -- "netrwPlugin",

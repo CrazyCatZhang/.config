@@ -106,6 +106,9 @@ local nmappings = {
 
   -- Lazy
   { from = "Z", to = ":Lazy<CR>" },
+
+  -- Markdown
+  { from = "M", to = ":MarkdownPreview<CR>" },
 }
 
 vim.keymap.set("n", "q", "<nop>", { noremap = true })
