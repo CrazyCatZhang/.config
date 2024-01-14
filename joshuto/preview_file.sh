@@ -189,6 +189,7 @@ handle_mime() {
 		exit 1
 		;;
 
+	## Image
 	image/png | image/jpeg)
 		dimension="Size $(exiftool "${FILE_PATH}" | grep '^Image Size' | awk '{print $4}')"
 		tags=$(tmsu_tag_list)
@@ -200,7 +201,6 @@ handle_mime() {
 		exit 4
 		;;
 
-	## Image
 	image/*)
 		## Preview as text conversion
 		exiftool "${FILE_PATH}" && exit 0

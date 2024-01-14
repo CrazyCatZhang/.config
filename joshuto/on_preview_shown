@@ -14,11 +14,7 @@ extension=$(/bin/echo "${path##*.}" | awk '{print tolower($0)}')
 
 case "$mimetype" in
 image/png | image/jpeg)
-	meta_file=$(get_preview_meta_file "$path")
-	y_offset=$(cat "$meta_file" | grep "y-offset" | awk '{print $2}')
-	if [[ -n "$y_offset" ]]; then
-		y=$(($y + $y_offset))
-	fi
+	y=$(($y + 1))
 	show_image "$path" $x $y $width $height
 	;;
 *)
