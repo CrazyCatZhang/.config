@@ -10,20 +10,6 @@ local limitStr = function(str)
 end
 
 local dartColonFirst = function(entry1, entry2)
-  if vim.bo.filetype ~= "dart" then
-    return nil
-  end
-  local entry1EndsWithColon = string.find(entry1.completion_item.label, ":") and entry1.source.name == "nvim_lsp"
-  local entry2EndsWithColon = string.find(entry2.completion_item.label, ":") and entry2.source.name == "nvim_lsp"
-  if entry1EndsWithColon and not entry2EndsWithColon then
-    return true
-  elseif not entry1EndsWithColon and entry2EndsWithColon then
-    return false
-  end
-  return nil
-end
-
-local dartColonFirst = function(entry1, entry2)
   if vim.bo.filetype ~= "python" then
     return nil
   end
@@ -37,10 +23,6 @@ local dartColonFirst = function(entry1, entry2)
     return true
   end
   return nil
-end
-
-local label_comparator = function(entry1, entry2)
-  return entry1.completion_item.label < entry2.completion_item.label
 end
 
 local M = {}

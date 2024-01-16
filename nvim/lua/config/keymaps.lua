@@ -5,6 +5,7 @@
 vim.g.mapleader = " "
 
 local mode_nv = { "n", "v" }
+local mode_nt = { "n", "t" }
 local mode_v = { "v" }
 local mode_i = { "i" }
 local nmappings = {
@@ -105,7 +106,7 @@ local nmappings = {
   { from = "R", to = ":Joshuto<CR>" },
 
   -- Lazy
-  { from = "Z", to = ":Lazy<CR>" },
+  { from = "<leader>pl", to = ":Lazy<CR>" },
 
   -- Markdown
   { from = "M", to = ":MarkdownPreview<CR>" },

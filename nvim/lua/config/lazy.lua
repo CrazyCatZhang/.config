@@ -1,8 +1,9 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  -- bootstrap lazy.nvim
-  -- stylua: ignore
-  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
+	-- bootstrap lazy.nvim
+	-- stylua: ignore
+	vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable",
+		lazypath })
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
@@ -33,7 +34,6 @@ require("lazy").setup({
       -- disable some rtp plugins
       disabled_plugins = {
         "gzip",
-        "dropbar",
         "vim-instant-markdown",
         -- "matchit",
         -- "matchparen",
@@ -50,7 +50,7 @@ require("lazy").setup({
 -- Define the theme and set the button to select the theme
 Ice = {}
 
-require("config.colorscheme")
+require("core.colorscheme")
 
 if not Ice.colorscheme then
   local colorscheme_cache = vim.fn.stdpath("data") .. "/colorscheme"
@@ -65,12 +65,17 @@ if not Ice.colorscheme then
 end
 
 if Ice.colorscheme then
-  require("config.utils").colorscheme(Ice.colorscheme)
+  require("core.utils").colorscheme(Ice.colorscheme)
 end
 
 vim.api.nvim_set_keymap(
   "n",
   "ee",
-  ':lua require("config.utils").select_colorscheme()<CR>',
+  ':lua require("core.utils").select_colorscheme()<CR>',
   { noremap = true, silent = true }
 )
+
+local swap_ternary = require("core.swap_ternary")
+vim.keymap.set("n", "<leader>st", swap_ternary.swap_ternary, { noremap = true })
+
+require("core.compile_run")

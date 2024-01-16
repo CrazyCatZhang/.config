@@ -3,13 +3,13 @@ local M = {}
 local F = {}
 
 M.config = {
-  -- {
-  --   "weilbith/nvim-code-action-menu",
-  --   cmd = "CodeActionMenu",
-  -- },
+  {
+    "weilbith/nvim-code-action-menu",
+    cmd = "CodeActionMenu",
+  },
   {
     "VonHeikemen/lsp-zero.nvim",
-    branch = "v3.x",
+    branch = "v2.x",
     dependencies = {
       {
         "folke/trouble.nvim",
@@ -42,30 +42,42 @@ M.config = {
         "lvimuser/lsp-inlayhints.nvim",
         branch = "anticonceal",
       },
+      -- "mjlbach/lsp_signature.nvim",
     },
 
     config = function()
       local lsp = require("lsp-zero").preset({})
       M.lsp = lsp
+      lsp.extend_lspconfig()
 
-      lsp.ensure_installed({
-        "tsserver",
-        "eslint",
-        "gopls",
-        "jsonls",
-        "html",
-        "clangd",
-        "dockerls",
-        "ansiblels",
-        "terraformls",
-        "texlab",
-        "pyright",
+      require("mason").setup({})
+      require("mason-lspconfig").setup({
+        -- Replace the language servers listed here
+        -- with the ones you want to install
+        ensure_installed = {
+          "tsserver",
+          "eslint",
+          "gopls",
+          "jsonls",
+          "html",
+          "clangd",
+          "dockerls",
+          "ansiblels",
+          "terraformls",
+          "texlab",
+          "pyright",
+        },
+        handlers = {
+          lsp.default_setup,
+        },
       })
+
+      -- F.configureInlayHints()
 
       lsp.on_attach(function(client, bufnr)
         lsp.default_keymaps({ buffer = bufnr })
         client.server_capabilities.semanticTokensProvider = nil
-        require("core.cmputils").configfunc()
+        require("core.autocomplete").configfunc()
         -- if vim.bo[bufnr].filetype ~= "dart" then
         --   require("lsp_signature").on_attach(F.signature_config, bufnr)
         -- end
@@ -223,8 +235,11 @@ F.configureKeybinds = function()
       vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
       vim.keymap.set("i", "<c-f>", vim.lsp.buf.signature_help, opts)
       vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+      -- vim.keymap.set({ 'n', 'x' }, '<leader>f', function() vim.lsp.buf.format({ async = true }) end, opts)
       vim.keymap.set("n", "<leader>aw", vim.lsp.buf.code_action, opts)
       vim.keymap.set("n", "<leader>,", vim.lsp.buf.code_action, opts)
+      -- vim.keymap.set('x', '<leader>aw', vim.lsp.buf.range_code_action, opts)
+      -- vim.keymap.set('x', "<leader>,", vim.lsp.buf.range_code_action, opts)
       vim.keymap.set("n", "<leader>t", ":Trouble<cr>", opts)
       vim.keymap.set("n", "<leader>-", vim.diagnostic.goto_prev, opts)
       vim.keymap.set("n", "<leader>=", vim.diagnostic.goto_next, opts)
