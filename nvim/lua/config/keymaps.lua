@@ -5,7 +5,6 @@
 vim.g.mapleader = " "
 
 local mode_nv = { "n", "v" }
-local mode_nt = { "n", "t" }
 local mode_v = { "v" }
 local mode_i = { "i" }
 local nmappings = {
@@ -25,7 +24,7 @@ local nmappings = {
 
   -- Movement
   {
-    from = "U",
+    from = "K",
     to = "5k",
     mode = mode_nv,
   },

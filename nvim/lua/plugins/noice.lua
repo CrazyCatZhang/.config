@@ -10,6 +10,7 @@ return {
     "rcarriga/nvim-notify",
   },
   opts = function(_, opts)
+    local icons = require("core.icons")
     return {
       lsp = {
         -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
@@ -49,13 +50,18 @@ return {
         inc_rename = false, -- enables an input dialog for inc-rename.nvim
         lsp_doc_border = true, -- add a border to hover docs and signature help
       },
-      views = {
-        mini = {
-          win_options = {
-            winblend = 0,
-            winhighlight = { Normal = "Pmenu", FloatBorder = "Pmenu" },
-          },
+      cmdline = {
+        view = "cmdline_popup",
+        format = {
+          cmdline = { icon = ">" },
+          search_down = { icon = "🔍⌄" },
+          search_up = { icon = "🔍⌃" },
+          filter = { icon = "$" },
+          lua = { icon = "☾" },
+          help = { icon = "?" },
         },
+      },
+      views = {
         cmdline_popup = {
           position = {
             row = 5,
