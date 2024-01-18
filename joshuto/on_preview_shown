@@ -20,4 +20,5 @@ image/png | image/jpeg)
 *)
 	remove_image
 	;;
+
 esac

@@ -61,6 +61,11 @@ return {
           help = { icon = "?" },
         },
       },
+      popupmenu = {
+        enabled = true, -- enables the Noice popupmenu UI
+        ---@type 'nui'|'cmp'
+        backend = "nui", -- backend to use to show regular cmdline completions
+      },
       views = {
         cmdline_popup = {
           position = {
