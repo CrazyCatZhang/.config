@@ -3,9 +3,9 @@
 # https://sw.kovidgoyal.net/kitty/conf/
 
 # To get a full list of supported fonts use the `kitty +list-fonts` command.
-font_family     IosevkaTerm Nerd Font
+font_family     Hack Nerd Font Mono
 #font_family      JetBrainsMono Nerd Font
-font_size 11.0
+font_size 16.0
 
 scrollback_lines 8000
 
@@ -285,3 +285,16 @@ map f3 kitten hints --program '*'
 # map double ctrl+a to ctrl+a (home)
 map ctrl+a>ctrl+a send_text all \x01
 
+
+# hammerspoon configuration
+# make your kitty window borderless
+hide_window_decorations titlebar-and-corners
+
+# make kitty app quit entirely instead of leaving null window, which made the script hard to detect kitty window
+macos_quit_when_last_window_closed yes
+
+# this one is optional, would quit kitty tab more quickly
+confirm_os_window_close 0
+
+# this one is optional, as hammerspoon script would move window in script line 45
+remember_window_size  yes

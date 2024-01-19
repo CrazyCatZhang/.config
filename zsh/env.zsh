@@ -18,3 +18,5 @@ export PKG_CONFIG_PATH="/usr/local/opt/xcb-util-image/lib/pkgconfig:$PKG_CONFIG_
 export PATH="/usr/local/sbin:$PATH"
 
 export PATH="/Applications/iTerm.app/Contents/Resources:${PATH}"
+
+export TERM=xterm-256color

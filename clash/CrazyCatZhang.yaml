@@ -41,7 +41,7 @@ dns:
       - +.gvt1.com
 proxies:
   - 
-    name: 有效期2024/01/30,剩余:67.77GB
+    name: 有效期2024/01/30,剩余:66.23GB
     type: trojan
     server: pro-iplc-hk1-1.dimsumyumcha.com
     port: 465
@@ -317,7 +317,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - 有效期2024/01/30,剩余:67.77GB
+      - 有效期2024/01/30,剩余:66.23GB
       - 香港-PRO-IPLC-HK1-1-流量倍率:1.0
       - 香港-PRO-IPLC-HK1-2-流量倍率:1.0
       - 香港-PRO-IPLC-HK1-3-流量倍率:1.0
@@ -349,7 +349,7 @@ proxy-groups:
     type: select
     proxies:
       - Auto
-      - 有效期2024/01/30,剩余:67.77GB
+      - 有效期2024/01/30,剩余:66.23GB
       - 香港-PRO-IPLC-HK1-1-流量倍率:1.0
       - 香港-PRO-IPLC-HK1-2-流量倍率:1.0
       - 香港-PRO-IPLC-HK1-3-流量倍率:1.0
