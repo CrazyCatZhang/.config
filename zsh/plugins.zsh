@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-plugins=(git)
+plugins=(git z sudo web-search 1Password command-not-found docker flutter forklift golang ruby rust sublime vscode xcode yarn npm)
 
 source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
 
