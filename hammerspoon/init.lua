@@ -2,8 +2,8 @@ local spaces = require("hs.spaces") -- https://github.com/asmagill/hs._asm.space
 
 -- Switch kitty
 hs.hotkey.bind(
-	{ "command" },
-	"escape",
+	_,
+	"f9",
 	function() -- change your own hotkey combo here, available keys could be found here:https://www.hammerspoon.org/docs/hs.hotkey.html#bind
 		local BUNDLE_ID = "net.kovidgoyal.kitty" -- more accurate to avoid mismatching on browser titles
 
