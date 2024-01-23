@@ -1,2 +1,0 @@
-ZSH_THEME="robbyrussell"
-
