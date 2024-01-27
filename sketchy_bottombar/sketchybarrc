@@ -17,7 +17,7 @@ FONT="CaskaydiaCove Nerd Font"
 # https://felixkratz.github.io/sketchy_bottombar/config/tricks#color-picker
 
 sketchy_bottombar --bar color=0x00000000 \
-                 height=48        \
+                 height=38        \
                  margin=15         \
                  y_offset=1 \
                                 padding_left=0   \

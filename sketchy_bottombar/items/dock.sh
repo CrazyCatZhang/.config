@@ -33,7 +33,7 @@ terminal=(
 	icon=$ICON_TERM
 	icon.font=$ICON_FONT
 	padding_right=6
-	click_script='open -a "WezTerm"'
+	click_script='open -a "iTerm2"'
 	icon.padding_right=0
 	icon.padding_left=10
 	background.color=$X_BROWN_DULL
@@ -107,7 +107,7 @@ sketchy_bottombar --add item finder center \
 browser=(
 	icon=$ICON_WEB
 	icon.font=$ICON_FONT
-	click_script='open -a "Orion"'
+	click_script='open -a "Goole Chrome"'
 	icon.padding_right=0
 	icon.padding_left=10
 	padding_right=6
