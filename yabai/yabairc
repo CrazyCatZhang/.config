@@ -35,7 +35,6 @@ yabai -m config bottom_padding 44
 yabai -m config left_padding 15
 yabai -m config right_padding 15
 yabai -m config window_gap 10
-yabai -m config window_animation_duration 0.60
 yabai -m config window_opacity_duration 0.45
 
 # ===== Rules ==================================
