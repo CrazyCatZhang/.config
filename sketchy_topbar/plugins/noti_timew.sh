@@ -1,6 +1,10 @@
 #!/bin/sh
 
+echo "Executing Timew Script"
+
 IS_ACTIVE=$(timew get dom.active)
+
+echo "IS_ACTIVE: $IS_ACTIVE"
 
 if [[ $IS_ACTIVE == 0 ]]; then
   sketchy_topbar --set $NAME label.drawing=off    \
@@ -30,3 +34,6 @@ else
                          icon.padding_left=6  \
                          icon.padding_right=2
 fi
+
+echo "Timew Script Execution Completed"
+

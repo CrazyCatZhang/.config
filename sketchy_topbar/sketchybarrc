@@ -9,13 +9,25 @@ PLUGIN_DIR="$CONFIG_DIR/plugins" # Directory where all the plugin scripts are st
 
 FONT="CaskaydiaCove Nerd Font"
 
+##### Bar Appearance #####
+# Configuring the general appearance of the bar, these are only some of the
+# options available. For all options see:
+# https://felixkratz.github.io/sketchy_topbar/config/bar
+# If you are looking for other colors, see the color picker:
+# https://felixkratz.github.io/sketchy_topbar/config/tricks#color-picker
+
 sketchy_topbar --bar color=0x00000000 \
-                 height=38        \
+                 height=40        \
                  margin=4         \
                  y_offset=5      \
                  padding_left=12   \
                  padding_right=15 \
                  font_smoothing=on 
+
+##### Changing Defaults #####
+# We now change some default values that are applied to all further items
+# For a full list of all available item properties see:
+# https://felixkratz.github.io/sketchy_topbar/config/items
 
 sketchy_topbar --default padding_left=12                                    \
                      padding_right=12                                   \
@@ -174,6 +186,8 @@ sketchy_topbar --add item seperator.l2 left                   \
                                    label.drawing=off
 
 
+
+
 source "$ITEM_DIR/spotify.sh"   # spotify widget
 
 
@@ -277,6 +291,5 @@ sketchy_topbar --add item seperator.r2 right                  \
 sketchy_topbar --update
 
 sketchy_topbar --hotload on
-
 
 

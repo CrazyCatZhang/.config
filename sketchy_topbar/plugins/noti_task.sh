@@ -19,3 +19,5 @@ else
 		icon.padding_left=6 \
 		icon.padding_right=2
 fi
+
+echo "Task Script Execution Completed"
