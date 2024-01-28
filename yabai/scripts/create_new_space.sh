@@ -17,4 +17,4 @@ if [[ ! -z $moveCurrentWindow && ! -z $windowId && $windowId != 'null' ]]; then
 fi
 
 yabai -m space --focus ${spaceIndex}
-~/.config/yabai/scripts/change-random-wallpaper.sh
+$HOME/.config/yabai/scripts/change-random-wallpaper.sh

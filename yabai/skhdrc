@@ -1,12 +1,5 @@
 # opens iTerm2
-alt - return : "${HOME}"/.config/yabai/scripts/open_iterm2.sh
-
-# Show system statistics
-fn + lalt - 1 : "${HOME}"/.config/yabai/scripts/show_cpu.sh
-fn + lalt - 2 : "${HOME}"/.config/yabai/scripts/show_mem.sh
-fn + lalt - 3 : "${HOME}"/.config/yabai/scripts/show_bat.sh
-fn + lalt - 4 : "${HOME}"/.config/yabai/scripts/show_disk.sh
-fn + lalt - 5 : "${HOME}"/.config/yabai/scripts/show_song.sh
+alt - return : $HOME/.config/yabai/scripts/open_iterm2.sh
 
 # Navigation
 alt - h : yabai -m window --focus west
@@ -93,32 +86,32 @@ cmd - 9 : yabai -m space --focus 9
 cmd - 0 : yabai -m space --focus 10
 
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
-alt - c : ~/.config/yabai/scripts/create_new_space.sh 1
+alt - c : $HOME/.config/yabai/scripts/create_new_space.sh 1
 
 # create desktop and follow focus - uses jq for parsing json (brew install jq)
-cmd + alt - c : ~/.config/yabai/scripts/create_new_space.sh
+cmd + alt - c : $HOME/.config/yabai/scripts/create_new_space.sh
 
 # destroy desktop and goto recent space
 # force refresh space bar
-alt - w : ~/.config/yabai/scripts/destroy_space.sh
+alt - w : $HOME/.config/yabai/scripts/destroy_space.sh
 
 # toggle window split type
 alt - e : yabai -m window --toggle split
 
 # float / unfloat window and center on screen
-alt - t : ~/.config/yabai/scripts/toggle-window-floating-tiling.sh \
+alt - t : $HOME/.config/yabai/scripts/toggle-window-floating-tiling.sh \
 
 # Force float to center
-shift + alt - t : ~/.config/yabai/scripts/toggle-window-floating-tiling.sh forceCenter \
+shift + alt - t : $HOME/.config/yabai/scripts/toggle-window-floating-tiling.sh forceCenter \
 
 # float / unfloat 到鼠标所在space
-alt - g : ~/.config/yabai/scripts/toggle-display-center-floating-tiling.sh \
+alt - g : $HOME/.config/yabai/scripts/toggle-display-center-floating-tiling.sh \
 
 # toggle sticky(+float), topmost, border and picture-in-picture
-alt - o : ~/.config/yabai/scripts/toggle-window-sticking-tiling.sh \
+alt - o : $HOME/.config/yabai/scripts/toggle-window-sticking-tiling.sh \
 
 # close window
-alt - x : yabai -m window --close && ~/.config/yabai/scripts/auto_close_space_when_space_empty.sh
+alt - x : yabai -m window --close && $HOME/.config/yabai/scripts/auto_close_space_when_space_empty.sh
 
 # Stack
 alt - s : ${HOME}/.config/yabai/scripts/toggle-window-bsp-stack.sh

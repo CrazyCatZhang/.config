@@ -3,29 +3,36 @@
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
+source "$HOME/.config/yabai/scripts/initialization.sh"
+
 # ===== Global Settings ==================================
 
 yabai -m config mouse_follows_focus off
 yabai -m config focus_follows_mouse off
-yabai -m config window_origin_display default
 yabai -m config window_placement second_child
 yabai -m config window_topmost off
-yabai -m config window_shadow on
+yabai -m config window_shadow off
+
+yabai -m config window_border on
+yabai -m config window_border_placement inset
+yabai -m config window_border_blur off
+yabai -m config window_border_hidpi off
+yabai -m config window_border_width 2
+yabai -m config window_border_radius 12
+yabai -m config active_window_border_topmost off
+yabai -m config active_window_border_color 0xfcFFEE58
+yabai -m config normal_window_border_color 0x00ffffff
+yabai -m config insert_window_border_color 0xffd75f5f
+
 yabai -m config window_opacity on
-yabai -m config window_opacity_duration 2000.0
+yabai -m config window_opacity_duration 0.45
 yabai -m config active_window_opacity 1.0
-yabai -m config normal_window_opacity 0.80
-yabai -m config window_border off
-yabai -m config window_border_width 6
-yabai -m config active_window_border_color 0xff775759
-yabai -m config normal_window_border_color 0xff555555
-yabai -m config insert_feedback_color 0xffd75f5f
+yabai -m config normal_window_opacity 0.8
 yabai -m config split_ratio 0.50
 yabai -m config auto_balance off
 yabai -m config mouse_modifier fn
 yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
-yabai -m config mouse_drop_action swap
 
 # ===== Space Settings ==================================
 
@@ -35,7 +42,6 @@ yabai -m config bottom_padding 44
 yabai -m config left_padding 15
 yabai -m config right_padding 15
 yabai -m config window_gap 10
-yabai -m config window_opacity_duration 0.45
 
 # ===== Rules ==================================
 
@@ -59,15 +65,14 @@ yabai -m rule --add app="^QuickTime Player$" manage=off
 # ===== Signals ================================
 
 yabai -m signal --add event=application_front_switched action="${ubersicht_spaces_refresh_command}"
-yabai -m signal --add event=display_changed action="${ubersicht_spaces_refresh_command}"
+yabai -m signal --add event=application_hidden action="$HOME/.config/yabai/scripts/auto-focus-to-new-one-when-window-destroyed.sh 2> /dev/null"
+
+yabai -m signal --add event=display_removed action="$HOME/.config/yabai/scripts/initialization.sh"
+yabai -m signal --add event=display_added action="$HOME/.config/yabai/scripts/initialization.sh"
+
 yabai -m signal --add event=space_changed action="${ubersicht_spaces_refresh_command}"
-yabai -m signal --add event=window_created action='
-  yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er ".\"can-resize\" or .\"is-floating\"" || \
-  yabai -m window $YABAI_WINDOW_ID --toggle float && \
-  yabai -m window $YABAI_WINDOW_ID --layer above && \
-  yabai -m window $YABAI_WINDOW_ID --grid 3:3:1:1:1:1
-'
-yabai -m signal --add event=window_destroyed action="${ubersicht_spaces_refresh_command}"
+yabai -m signal --add event=window_destroyed action="$HOME/.config/yabai/scripts/auto-focus-to-new-one-when-window-destroyed.sh 2> /dev/null"
+yabai -m signal --add event=window_minimized action="$HOME/.config/yabai/scripts/auto-focus-to-new-one-when-window-destroyed.sh 2> /dev/null"
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 yabai -m signal --add event=window_title_changed action="sketchybar --trigger title_change"
 
