@@ -18,12 +18,6 @@ for ((i = 0; i < $cnt; i++)); do
 	# Get the coordinates of top left cornor, the width and the height of the display
 	read -r x0 y0 w0 h0 <<<$(echo $(echo $display | jq ".frame" | jq ".x, .y, .w, .h"))
 
-	# Convert to integers
-	x0=$(echo "$x0" | bc)
-	y0=$(echo "$y0" | bc)
-	w0=$(echo "$w0" | bc)
-	h0=$(echo "$h0" | bc)
-
 	# Calcuate the width and the height of the window
 	if [ $h0 -gt $w0 ]; then
 		w=$(echo "$w0 * 10 / 12" | bc)

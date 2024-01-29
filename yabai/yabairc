@@ -71,6 +71,12 @@ yabai -m signal --add event=display_removed action="$HOME/.config/yabai/scripts/
 yabai -m signal --add event=display_added action="$HOME/.config/yabai/scripts/initialization.sh"
 
 yabai -m signal --add event=space_changed action="${ubersicht_spaces_refresh_command}"
+yabai -m signal --add event=window_created action='
+  yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er ".\"can-resize\" or .\"is-floating\"" || \
+  yabai -m window $YABAI_WINDOW_ID --toggle float && \
+  yabai -m window $YABAI_WINDOW_ID --layer above && \
+  yabai -m window $YABAI_WINDOW_ID --grid 3:3:1:1:1:1
+'
 yabai -m signal --add event=window_destroyed action="$HOME/.config/yabai/scripts/auto-focus-to-new-one-when-window-destroyed.sh 2> /dev/null"
 yabai -m signal --add event=window_minimized action="$HOME/.config/yabai/scripts/auto-focus-to-new-one-when-window-destroyed.sh 2> /dev/null"
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
