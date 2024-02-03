@@ -71,7 +71,7 @@ alt - f         : yabai -m window --toggle zoom-fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
 # fast focus Workspace
-cmd - tab : yabai -m space --focus recent
+alt - tab : yabai -m space --focus recent
 alt - n : yabai -m space --focus prev || yabai -m space --focus last
 alt - m : yabai -m space --focus next || yabai -m space --focus first
 cmd - 1 : yabai -m space --focus 1
