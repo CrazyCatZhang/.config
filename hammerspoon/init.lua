@@ -1,7 +1,7 @@
 local spaces = require("hs.spaces")
 local screen = require("hs.screen")
 
-hs.hotkey.bind({ "command" }, "escape", function()
+hs.hotkey.bind(_, "f10", function()
 	local BUNDLE_ID = "net.kovidgoyal.kitty"
 
 	function getMainWindow(app)
@@ -50,7 +50,7 @@ hs.hotkey.bind({ "command" }, "escape", function()
 			local appWatcher = nil
 			appWatcher = hs.application.watcher.new(function(name, event, app)
 				if event == hs.application.watcher.launched and app:bundleID() == BUNDLE_ID then
-					getMainWindow(app):move(hs.geometry({ x = 0, y = 0, w = 1, h = 0.4 }))
+					getMainWindow(app):move(hs.geometry({ x = 0, y = 0, w = 1, h = 1 }))
 					app:hide()
 					moveWindow(app, space)
 					appWatcher:stop()
