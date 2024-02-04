@@ -121,6 +121,9 @@ previewers = [
 	# Fallback
 	{ name = "*", exec = "file" },
 ]
+prepend_previewers = [
+  { mime = "audio/*", exec = "mpg123" },
+]
 
 [input]
 # cd
