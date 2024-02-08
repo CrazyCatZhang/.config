@@ -17,6 +17,16 @@ local compileRun = function()
   elseif ft == "javascript" then
     split()
     vim.cmd("term node %")
+  elseif ft == "typescript" then
+    split()
+    local ts_filename = vim.fn.expand("%:p")
+    local js_filename = ts_filename:gsub("%.ts$", ".js")
+    vim.cmd("term tsc " .. ts_filename .. " && node " .. js_filename)
+  elseif ft == "java" then
+    split()
+    local java_filename = vim.fn.expand("%:p")
+    local class_filename = java_filename:gsub("%.java$", ".class")
+    vim.cmd("term javac " .. java_filename .. " && java " .. class_filename:gsub("%.class$", ""))
   elseif ft == "lua" then
     split()
     vim.cmd("term luajit %")
