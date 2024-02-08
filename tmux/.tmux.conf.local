@@ -356,93 +356,93 @@ tmux_conf_copy_to_os_clipboard=false
 unbind C-b
 set -g prefix 'C-s'
 
-# window management
-bind -n M-o new-window -c "#{pane_current_path}"
-bind -n M-O break-pane
-bind -n M-Q kill-pane
-
-# window navigation
-unbind n
-unbind p
-unbind 1
-unbind 2
-unbind 3
-unbind 4
-unbind 5
-unbind 6
-unbind 7
-unbind 8
-unbind 9
-unbind 0
-bind -r C-p previous-window
-bind -r C-n next-window
-
-bind -n M-1 select-window -t 1
-bind -n M-2 select-window -t 2
-bind -n M-3 select-window -t 3
-bind -n M-4 select-window -t 4
-bind -n M-5 select-window -t 5
-bind -n M-6 select-window -t 6
-bind -n M-7 select-window -t 7
-bind -n M-8 select-window -t 8
-bind -n M-9 select-window -t 9
-
-bind -n M-! join-pane -t :1
-bind -n M-@ join-pane -t :2
-bind -n 'M-#' join-pane -t :3
-bind -n 'M-$' join-pane -t :4
-bind -n M-% join-pane -t :5
-bind -n M-^ join-pane -t :6
-bind -n M-& join-pane -t :7
-bind -n M-* join-pane -t :8
-bind -n M-( join-pane -t :9
-
-bind k split-window -vb -c "#{pane_current_path}"
-bind j split-window -v -c "#{pane_current_path}"
-bind h split-window -hb -c "#{pane_current_path}"
-bind l split-window -h -c "#{pane_current_path}"
-
-bind -n M-f resize-pane -Z
-
-# pane navigation
-bind 1 select-pane -t:.1
-bind 2 select-pane -t:.2
-bind 3 select-pane -t:.3
-bind 4 select-pane -t:.4
-bind 5 select-pane -t:.5
-bind 6 select-pane -t:.6
-bind 7 select-pane -t:.7
-bind 8 select-pane -t:.8
-bind 9 select-pane -t:.9
-bind 0 select-pane -t:.10
-bind -n M-h select-pane -L
-bind -n M-j select-pane -D
-bind -n M-k select-pane -U
-bind -n M-l select-pane -R
-bind > swap-pane -D
-bind < swap-pane -U
-bind | swap-pane
-bind -n M-Space next-layout
-
-bind W choose-tree -Z
-bind S choose-tree 'move-pane -v -s "%%"'
-bind V choose-tree 'move-pane -h -s "%%"'
-
-# pane resizing
-bind -n M-H resize-pane -L 3
-bind -n M-J resize-pane -D 3
-bind -n M-K resize-pane -U 3
-bind -n M-L resize-pane -R 3
-
-set -g status-keys emacs
-set -g mode-keys vi
-
-bind -n M-v copy-mode
-
-set -g allow-passthrough on
-
-set -ga update-environment TERM
-set -ga update-environment TERM_PROGRAM
+# # window management
+# bind -n M-o new-window -c "#{pane_current_path}"
+# bind -n M-O break-pane
+# bind -n M-Q kill-pane
+#
+# # window navigation
+# unbind n
+# unbind p
+# unbind 1
+# unbind 2
+# unbind 3
+# unbind 4
+# unbind 5
+# unbind 6
+# unbind 7
+# unbind 8
+# unbind 9
+# unbind 0
+# bind -r C-p previous-window
+# bind -r C-n next-window
+#
+bind 1 select-window -t 1
+bind 2 select-window -t 2
+bind 3 select-window -t 3
+bind 4 select-window -t 4
+bind 5 select-window -t 5
+bind 6 select-window -t 6
+bind 7 select-window -t 7
+bind 8 select-window -t 8
+bind 9 select-window -t 9
+#
+# bind -n M-! join-pane -t :1
+# bind -n M-@ join-pane -t :2
+# bind -n 'M-#' join-pane -t :3
+# bind -n 'M-$' join-pane -t :4
+# bind -n M-% join-pane -t :5
+# bind -n M-^ join-pane -t :6
+# bind -n M-& join-pane -t :7
+# bind -n M-* join-pane -t :8
+# bind -n M-( join-pane -t :9
+#
+# bind k split-window -vb -c "#{pane_current_path}"
+# bind j split-window -v -c "#{pane_current_path}"
+# bind h split-window -hb -c "#{pane_current_path}"
+# bind l split-window -h -c "#{pane_current_path}"
+#
+# bind -n M-f resize-pane -Z
+#
+# # pane navigation
+# bind 1 select-pane -t:.1
+# bind 2 select-pane -t:.2
+# bind 3 select-pane -t:.3
+# bind 4 select-pane -t:.4
+# bind 5 select-pane -t:.5
+# bind 6 select-pane -t:.6
+# bind 7 select-pane -t:.7
+# bind 8 select-pane -t:.8
+# bind 9 select-pane -t:.9
+# bind 0 select-pane -t:.10
+# bind -n M-h select-pane -L
+# bind -n M-j select-pane -D
+# bind -n M-k select-pane -U
+# bind -n M-l select-pane -R
+# bind > swap-pane -D
+# bind < swap-pane -U
+# bind | swap-pane
+# bind -n M-Space next-layout
+#
+# bind W choose-tree -Z
+# bind S choose-tree 'move-pane -v -s "%%"'
+# bind V choose-tree 'move-pane -h -s "%%"'
+#
+# # pane resizing
+# bind -n M-H resize-pane -L 3
+# bind -n M-J resize-pane -D 3
+# bind -n M-K resize-pane -U 3
+# bind -n M-L resize-pane -R 3
+#
+# set -g status-keys emacs
+# set -g mode-keys vi
+#
+# bind -n M-v copy-mode
+#
+# set -g allow-passthrough on
+#
+# set -ga update-environment TERM
+# set -ga update-environment TERM_PROGRAM
 # increase history size
 #set -g history-limit 10000
 
