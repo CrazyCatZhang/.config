@@ -460,7 +460,7 @@
     "tab.activeBorder": "#29B6F6",
     "icon.foreground": "#29B6F6",
     "badge.foreground": "#29B6F6",
-    "list.focusOutline": "#29B6F6",
+    // "list.focusOutline": "#29B6F6",
     "panelTitle.activeForeground": "#29B6F6",
     "panelTitle.activeBorder": "#29B6F6",
     "titleBar.activeForeground": "#29B6F6",
@@ -477,6 +477,5 @@
   "workbench.settings.editor": "json",
   "window.titleBarStyle": "native",
   "window.customTitleBarVisibility": "never",
-  "workbench.statusBar.visible": false,
-  "workbench.activityBar.location": "hidden"
+  "workbench.statusBar.visible": false
 }
