@@ -86,6 +86,58 @@
     "when": "vim.active && inQuickOpen"
   },
   {
+    "key": "tab",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": ["search.action.focusSearchList"]
+    },
+    "when": "searchViewletFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "search.focus.previousInputBox",
+        "search.focus.previousInputBox",
+        "search.focus.previousInputBox",
+        "search.focus.previousInputBox"
+      ]
+    },
+    "when": "hasSearchResult && searchViewletFocus"
+  },
+  {
+    "key": "o",
+    "command": "revealReference",
+    "when": "listFocus && referenceSearchVisible && !inputFocus && !treeElementCanCollapse && !treeElementCanExpand"
+  },
+  {
+    "key": "enter",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": ["revealReference", "closeReferenceSearch"]
+    },
+    "when": "listFocus && referenceSearchVisible && !inputFocus && !treeElementCanCollapse && !treeElementCanExpand"
+  },
+  {
+    "key": "enter",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": ["list.select", "workbench.action.togglePanel"]
+    },
+    "when": "panelFocus && !inDebugRepl && activePanel!='workbench.panel.markers' && reference-list.source != 'callHierarchy' "
+  },
+  {
+    "key": "ctrl+j",
+    "command": "list.focusDown",
+    "when": "panelFocus && activePanel == 'workbench.panel.markers' "
+  },
+  {
+    "key": "ctrl+k",
+    "command": "list.focusUp",
+    "when": "panelFocus && activePanel == 'workbench.panel.markers' "
+  },
+  {
     "key": "/",
     "command": "list.find",
     "when": "listFocus && listSupportsFind && !inputFocus"
@@ -179,5 +231,15 @@
     "key": "cmd+w",
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+.",
+    "command": "acceptSelectedCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "cmd+.",
+    "command": "-acceptSelectedCodeAction",
+    "when": "codeActionMenuVisible"
   }
 ]

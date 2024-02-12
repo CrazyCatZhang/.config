@@ -70,10 +70,6 @@
       "commands": [":nohlsearch"]
     },
     {
-      "before": ["<leader>", "d"],
-      "after": ["d", "d"]
-    },
-    {
       "before": ["<C-n>"],
       "commands": [":nohl"]
     },
@@ -96,7 +92,7 @@
     },
     {
       "before": ["leader", "f"],
-      "commands": ["revealInExplorer"]
+      "commands": ["editor.action.formatDocument"]
     },
     {
       "before": ["leader", "w"],
@@ -131,8 +127,47 @@
       "commands": ["workbench.view.explorer"]
     },
     {
-      "before": ["leader", "r"],
-      "commands": ["workbench.action.debug.start"]
+      "before": ["<leader>", "u"],
+      "commands": ["editor.action.referenceSearch.trigger"]
+    },
+    {
+      "before": ["<leader>", "U"],
+      "commands": ["references-view.findReferences"]
+    },
+    {
+      "before": ["<leader>", "i", "n"],
+      "commands": ["references-view.showCallHierarchy"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["workbench.action.files.save", "workbench.action.debug.run"]
+    },
+    {
+      "before": ["<leader>", "d", "r"],
+      "commands": [
+        "workbench.action.files.save",
+        "workbench.action.debug.start"
+      ]
+    },
+    {
+      "before": ["<leader>", "d", "b"],
+      "commands": ["editor.debug.action.toggleBreakpoint"]
+    },
+    {
+      "before": ["<leader>", "d", "c"],
+      "commands": ["editor.debug.action.conditionalBreakpoint"]
+    },
+    {
+      "before": ["<leader>", "r", "n"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["<leader>", "d", "k"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["<leader>", "d", "j"],
+      "commands": ["editor.action.marker.next"]
     },
     {
       "before": ["s"],
@@ -183,12 +218,24 @@
       "commands": [":tabmove-"]
     },
     {
+      "before": ["<leader>", "c", "n"],
+      "commands": ["editor.action.commentLine"]
+    },
+    {
       "before": ["<leader>", "t"],
       "commands": ["workbench.action.terminal.toggleTerminal"]
     },
     {
-      "before": ["<leader>", "c", "n"],
-      "commands": ["editor.action.commentLine"]
+      "before": ["<leader>", "m"],
+      "commands": ["workbench.actions.view.problems"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["workbench.action.output.toggleOutput"]
+    },
+    {
+      "before": ["<leader>", "y"],
+      "commands": ["workbench.debug.action.toggleRepl"]
     }
   ],
   "vim.visualModeKeyBindings": [
@@ -413,10 +460,8 @@
     "activityBar.activeBorder": "#00000000",
     "list.focusAndSelectionOutline": "#00000000",
     "editorGroupHeader.tabsBackground": "#00000000",
-    // "sideBar.background": "#00000000",
     "sideBarSectionHeader.border": "#00000000",
     "sideBarSectionHeader.background": "#00000000",
-    // "editor.background": "#00000000",
     "peekViewEditor.background": "#00000000",
     "peekViewEditorGutter.background": "#00000000",
     "peekViewTitle.background": "#00000000",
@@ -428,7 +473,6 @@
     "tab.inactiveBackground": "#00000000",
     "tab.lastPinnedBorder": "#00000000",
     "editorOverviewRuler.border": "#00000000",
-    // "statusBar.background": "#00000000",
     "statusBar.debuggingBackground": "#00000000",
     "statusBar.noFolderBackground": "#00000000",
     "statusBar.focusBorder": "#00000000",
@@ -437,7 +481,6 @@
     "focusBorder": "#00000000",
     "tree.indentGuidesStroke": "#00000000",
     "panel.background": "#00000000",
-    // "activityBar.background": "#00000000",
     "activityBar.dropBorder": "#00000000",
     "peekViewEditor.matchHighlightBackground": "#00000000",
     "peekViewEditor.matchHighlightBorder": "#00000000",
@@ -468,7 +511,6 @@
     "tab.activeBorder": "#29B6F6",
     "icon.foreground": "#29B6F6",
     "badge.foreground": "#29B6F6",
-    // "list.focusOutline": "#29B6F6",
     "panelTitle.activeForeground": "#29B6F6",
     "panelTitle.activeBorder": "#29B6F6",
     "titleBar.activeForeground": "#29B6F6",
