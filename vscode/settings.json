@@ -236,6 +236,10 @@
     {
       "before": ["<leader>", "y"],
       "commands": ["workbench.debug.action.toggleRepl"]
+    },
+    {
+      "before": ["<leader>", "a", "a"],
+      "commands": ["editor.toggleFold"]
     }
   ],
   "vim.visualModeKeyBindings": [
