@@ -292,6 +292,30 @@
     {
       "before": ["<leader>", "p", "f"],
       "commands": ["fileutils.duplicateFile"]
+    },
+    {
+      "before": ["<leader>", "g", "p"],
+      "commands": ["workbench.view.extension.project-manager"]
+    },
+    {
+      "before": ["<leader>", "p", "m"],
+      "commands": ["projectManager.listProjects"]
+    },
+    {
+      "before": ["<leader>", "l", "a"],
+      "commands": ["projectManager.listAnyProjects#sideBarAny"]
+    },
+    {
+      "before": ["<leader>", "l", "f"],
+      "commands": ["projectManager.listFavoriteProjects#sideBarFavorites"]
+    },
+    {
+      "before": ["<leader>", "l", "g"],
+      "commands": ["projectManager.listGitProjects#sideBarGit"]
+    },
+    {
+      "before": ["<leader>", "s", "p"],
+      "commands": ["projectManager.saveProject"]
     }
   ],
   "vim.visualModeKeyBindings": [
@@ -609,5 +633,7 @@
     "hint": "🤖"
   },
   "errorLens.gutterIconSize": "auto",
-  "errorLens.delay": 500
+  "errorLens.delay": 500,
+  "workbench.statusBar.visible": false,
+  "projectManager.git.baseFolders": ["~/Github"]
 }
