@@ -260,6 +260,38 @@
     {
       "before": ["<leader>", "C", "C"],
       "commands": ["turboConsoleLog.uncommentAllLogMessages"]
+    },
+    {
+      "before": ["<leader>", "r", "f", "n"],
+      "commands": ["fileutils.renameFile"]
+    },
+    {
+      "before": ["<leader>", "d", "f"],
+      "commands": ["fileutils.removeFile"]
+    },
+    {
+      "before": ["<leader>", "n", "f"],
+      "commands": ["fileutils.newFile"]
+    },
+    {
+      "before": ["<leader>", "n", "f", "r"],
+      "commands": ["fileutils.newFileAtRoot"]
+    },
+    {
+      "before": ["<leader>", "n", "o"],
+      "commands": ["fileutils.newFolder"]
+    },
+    {
+      "before": ["<leader>", "n", "o", "r"],
+      "commands": ["fileutils.newFolderAtRoot"]
+    },
+    {
+      "before": ["<leader>", "m", "t"],
+      "commands": ["fileutils.moveFile"]
+    },
+    {
+      "before": ["<leader>", "p", "f"],
+      "commands": ["fileutils.duplicateFile"]
     }
   ],
   "vim.visualModeKeyBindings": [
