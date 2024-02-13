@@ -218,7 +218,7 @@
       "commands": [":tabmove-"]
     },
     {
-      "before": ["<leader>", "c", "n"],
+      "before": ["<leader>", "c"],
       "commands": ["editor.action.commentLine"]
     },
     {
@@ -240,6 +240,26 @@
     {
       "before": ["<leader>", "a", "a"],
       "commands": ["editor.toggleFold"]
+    },
+    {
+      "before": ["<leader>", "o"],
+      "commands": ["editor.action.organizeImports"]
+    },
+    {
+      "before": ["<leader>", "L"],
+      "commands": ["turboConsoleLog.displayLogMessage"]
+    },
+    {
+      "before": ["<leader>", "D"],
+      "commands": ["turboConsoleLog.deleteAllLogMessages"]
+    },
+    {
+      "before": ["<leader>", "C"],
+      "commands": ["turboConsoleLog.commentAllLogMessages"]
+    },
+    {
+      "before": ["<leader>", "C", "C"],
+      "commands": ["turboConsoleLog.uncommentAllLogMessages"]
     }
   ],
   "vim.visualModeKeyBindings": [
@@ -258,6 +278,22 @@
     {
       "before": ["<leader>", "c", "n"],
       "commands": ["editor.action.commentLine"]
+    },
+    {
+      "before": ["<leader>", "L"],
+      "commands": ["turboConsoleLog.displayLogMessage"]
+    },
+    {
+      "before": ["<leader>", "D"],
+      "commands": ["turboConsoleLog.deleteAllLogMessages"]
+    },
+    {
+      "before": ["<leader>", "C"],
+      "commands": ["turboConsoleLog.commentAllLogMessages"]
+    },
+    {
+      "before": ["<leader>", "C", "C"],
+      "commands": ["turboConsoleLog.uncommentAllLogMessages"]
     }
   ],
   "vim.leader": "<space>",
@@ -531,5 +567,15 @@
   "workbench.settings.editor": "json",
   "window.titleBarStyle": "native",
   "window.customTitleBarVisibility": "never",
-  "workbench.statusBar.visible": false
+  "errorLens.statusBarIconsEnabled": true,
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.gutterIconSet": "emoji",
+  "errorLens.gutterEmoji": {
+    "error": "🤡",
+    "warning": "🫥",
+    "info": "🔅",
+    "hint": "🤖"
+  },
+  "errorLens.gutterIconSize": "auto",
+  "errorLens.delay": 500
 }
