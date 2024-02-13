@@ -344,6 +344,14 @@
     {
       "before": ["<leader>", "w", "v"],
       "commands": ["console-ninja.watchLocationValue"]
+    },
+    {
+      "before": ["<leader>", "l", "e"],
+      "commands": ["console-ninja.goToLatestErrorSource"]
+    },
+    {
+      "before": ["<leader>", "s", "s"],
+      "commands": ["console-ninja.searchLogs"]
     }
   ],
   "vim.visualModeKeyBindings": [
