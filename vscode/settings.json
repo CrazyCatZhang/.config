@@ -85,7 +85,6 @@
   /*
    * Editor settings
    */
-  "security.workspace.trust.untrustedFiles": "open",
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.lineNumbers": "relative",
@@ -294,6 +293,7 @@
    */
   "explorer.confirmDelete": false,
   "breadcrumbs.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
 
   /*
    * Extension Settings

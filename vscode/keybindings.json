@@ -1,5 +1,7 @@
-// Place your key bindings in this file to override the defaultsauto[]
 [
+  /*
+   * Code Runner Keybindings
+   */
   {
     "key": "cmd+r",
     "command": "code-runner.run"
@@ -8,11 +10,49 @@
     "key": "ctrl+alt+n",
     "command": "-code-runner.run"
   },
+
+  /*
+   * Terminal Keybindings
+   */
   {
     "key": "alt+`",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
   },
+  {
+    "key": "ctrl+shift+k",
+    "command": "workbench.action.terminal.resizePaneUp",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.terminal.resizePaneDown",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "shift+alt+`",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "shift+alt+j",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "shift+alt+k",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "cmd+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+
+  /*
+   * Editor Keybindings
+   */
   {
     "key": "alt+1",
     "command": "workbench.action.openEditorAtIndex1"
@@ -49,6 +89,10 @@
     "key": "alt+9",
     "command": "workbench.action.openEditorAtIndex9"
   },
+
+  /*
+   * Navigate Keybindings
+   */
   {
     "key": "ctrl+h",
     "command": "workbench.action.navigateLeft"
@@ -86,6 +130,30 @@
     "when": "vim.active && inQuickOpen"
   },
   {
+    "key": "ctrl+j",
+    "command": "list.focusDown",
+    "when": "panelFocus && activePanel == 'workbench.panel.markers' "
+  },
+  {
+    "key": "ctrl+k",
+    "command": "list.focusUp",
+    "when": "panelFocus && activePanel == 'workbench.panel.markers' "
+  },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+
+  /*
+   * Search Keybindings
+   */
+  {
     "key": "tab",
     "command": "extension.multiCommand.execute",
     "args": {
@@ -107,6 +175,15 @@
     "when": "hasSearchResult && searchViewletFocus"
   },
   {
+    "key": "/",
+    "command": "list.find",
+    "when": "listFocus && listSupportsFind && !inputFocus"
+  },
+
+  /*
+   * Reference Keybindings
+   */
+  {
     "key": "o",
     "command": "revealReference",
     "when": "listFocus && referenceSearchVisible && !inputFocus && !treeElementCanCollapse && !treeElementCanExpand"
@@ -127,21 +204,10 @@
     },
     "when": "panelFocus && !inDebugRepl && activePanel!='workbench.panel.markers' && reference-list.source != 'callHierarchy' "
   },
-  {
-    "key": "ctrl+j",
-    "command": "list.focusDown",
-    "when": "panelFocus && activePanel == 'workbench.panel.markers' "
-  },
-  {
-    "key": "ctrl+k",
-    "command": "list.focusUp",
-    "when": "panelFocus && activePanel == 'workbench.panel.markers' "
-  },
-  {
-    "key": "/",
-    "command": "list.find",
-    "when": "listFocus && listSupportsFind && !inputFocus"
-  },
+
+  /*
+   * File Keybindings
+   */
   {
     "key": "a",
     "command": "explorer.newFile",
@@ -167,26 +233,10 @@
     "command": "moveFileToTrash",
     "when": "explorerResourceMoveableToTrash && filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus"
   },
-  {
-    "key": "ctrl+j",
-    "command": "selectNextCodeAction",
-    "when": "codeActionMenuVisible"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "selectPrevCodeAction",
-    "when": "codeActionMenuVisible"
-  },
-  {
-    "key": "ctrl+shift+k",
-    "command": "workbench.action.terminal.resizePaneUp",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+shift+j",
-    "command": "workbench.action.terminal.resizePaneDown",
-    "when": "terminalFocus"
-  },
+
+  /*
+   * Panel Keybindings
+   */
   {
     "key": "ctrl+cmd+f",
     "command": "workbench.action.toggleMaximizedPanel",
@@ -198,48 +248,8 @@
     "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
   },
   {
-    "key": "cmd+k cmd+m",
-    "command": "-workbench.action.toggleMaximizeEditorGroup",
-    "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
-  },
-  {
     "key": "ctrl+cmd+f",
     "command": "-workbench.action.toggleFullScreen",
     "when": "!isIOS"
-  },
-  {
-    "key": "shift+alt+`",
-    "command": "workbench.action.terminal.new",
-    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
-  },
-  {
-    "key": "ctrl+shift+`",
-    "command": "-workbench.action.terminal.new",
-    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
-  },
-  {
-    "key": "shift+alt+j",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
-  },
-  {
-    "key": "shift+alt+k",
-    "command": "workbench.action.terminal.focusPrevious",
-    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
-  },
-  {
-    "key": "cmd+w",
-    "command": "workbench.action.terminal.kill",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "cmd+.",
-    "command": "acceptSelectedCodeAction",
-    "when": "codeActionMenuVisible"
-  },
-  {
-    "key": "cmd+.",
-    "command": "-acceptSelectedCodeAction",
-    "when": "codeActionMenuVisible"
   }
 ]
