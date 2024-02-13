@@ -316,6 +316,34 @@
     {
       "before": ["<leader>", "s", "p"],
       "commands": ["projectManager.saveProject"]
+    },
+    {
+      "before": ["<leader>", "v", "i"],
+      "commands": ["vite.showCommands"]
+    },
+    {
+      "before": ["<leader>", "r", "m"],
+      "commands": ["workbench.action.remote.showMenu"]
+    },
+    {
+      "before": ["t", "o"],
+      "commands": ["workbench.view.extension.todo-tree-container"]
+    },
+    {
+      "before": ["t", "e"],
+      "commands": ["todo-tree.showTreeView"]
+    },
+    {
+      "before": ["<leader>", "j", "a"],
+      "commands": ["console-ninja.start"]
+    },
+    {
+      "before": ["<leader>", "s", "o"],
+      "commands": ["console-ninja.showOutput"]
+    },
+    {
+      "before": ["<leader>", "w", "v"],
+      "commands": ["console-ninja.watchLocationValue"]
     }
   ],
   "vim.visualModeKeyBindings": [
@@ -332,7 +360,7 @@
       "commands": ["editor.action.codeAction"]
     },
     {
-      "before": ["<leader>", "c", "n"],
+      "before": ["<leader>", "c"],
       "commands": ["editor.action.commentLine"]
     },
     {
@@ -620,7 +648,7 @@
     "editorGroupHeader.tabsBorder": "#00000000"
   },
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.settings.editor": "json",
+  // "workbench.settings.editor": "json",
   "window.titleBarStyle": "native",
   "window.customTitleBarVisibility": "never",
   "errorLens.statusBarIconsEnabled": true,
@@ -634,6 +662,20 @@
   },
   "errorLens.gutterIconSize": "auto",
   "errorLens.delay": 500,
+  "projectManager.git.baseFolders": ["~/Github"],
+  "vite.autoStart": false,
   "workbench.statusBar.visible": false,
-  "projectManager.git.baseFolders": ["~/Github"]
+  "files.autoGuessEncoding": true,
+  "editor.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "editor.wordWrap": "on",
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.suggestSelection": "recentlyUsed",
+  "code-runner.runInTerminal": true,
+  "code-runner.saveAllFilesBeforeRun": true,
+  "code-runner.saveFileBeforeRun": true,
+  "errorLens.fontWeight": "bold",
+  "editor.fontWeight": "bold",
+  "terminal.integrated.env.osx": {}
 }
