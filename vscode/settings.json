@@ -6,10 +6,12 @@
   "workbench.colorTheme": "Material Theme Ocean",
   "workbench.editor.tabSizing": "shrink",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.settings.editor": "json",
+  // "workbench.settings.editor": "json",
   "workbench.statusBar.visible": false,
   "workbench.list.smoothScrolling": true,
   "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#29B6F6",
+    "editorCursor.background": "#29B6F6",
     "sideBar.border": "#00000000",
     "statusBar.border": "#00000000",
     "terminal.border": "#00000000",
@@ -109,7 +111,7 @@
   "editor.acceptSuggestionOnEnter": "smart",
   "editor.suggestSelection": "recentlyUsed",
   "editor.smoothScrolling": true,
-  "editor.fontWeight": "bold",
+  "editor.fontWeight": "normal",
   "editor.tabSize": 2,
   "editor.tokenColorCustomizations": {
     "textMateRules": [
@@ -274,6 +276,7 @@
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.env.osx": {},
+  "terminal.integrated.defaultProfile.windows": "zsh",
 
   /*
    * Window Settings
@@ -305,6 +308,7 @@
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
+  "vim.timeout": 500,
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "j"],
@@ -457,10 +461,6 @@
       "commands": [":tabmove-"]
     },
     {
-      "before": ["<leader>", "c"],
-      "commands": ["editor.action.commentLine"]
-    },
-    {
       "before": ["<leader>", "t"],
       "commands": ["workbench.action.terminal.toggleTerminal"]
     },
@@ -593,7 +593,17 @@
       "commands": ["console-ninja.searchLogs"]
     }
   ],
-  "vim.visualModeKeyBindings": [
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["n"],
+      "commands": ["editor.action.moveSelectionToNextFindMatch"],
+      "silent": true
+    },
+    {
+      "before": ["M"],
+      "commands": ["cursorUndo"],
+      "silent": true
+    },
     {
       "before": ["K"],
       "after": ["5", "k"]
@@ -605,10 +615,6 @@
     {
       "before": ["<leader>", "n"],
       "commands": ["editor.action.codeAction"]
-    },
-    {
-      "before": ["<leader>", "c"],
-      "commands": ["editor.action.commentLine"]
     },
     {
       "before": ["<leader>", "L"],
@@ -654,21 +660,28 @@
     "height": 20,
     "fontSize": 10
   },
+  "apc.header": {
+    "height": 35,
+    "fontSize": 15
+  },
   "apc.electron": {
     "frame": false,
-    "transparent": true,
     "vibrancy": "ultra-dark",
-    "visualEffectState": "active",
-    "titleBarStyle": "hiddenInset",
-    "trafficLightPosition": {
-      "x": 7,
-      "y": 5
-    }
+    "visualEffectState": "active"
+    // "titleBarStyle": "customButtonsOnHover",
+  },
+  "apc.sidebar.titlebar": {
+    "height": 35,
+    "fontSize": 13
   },
   "apc.listRow": {
     "height": 30,
     "fontSize": 14
   },
+  "apc.menubar.compact": false,
+  "apc.imports": [
+    "file:///Users/crazycatzhang/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.1/dist/updateHandler.js"
+  ],
 
   // ----------- Error Lens Settings -----------
   "errorLens.statusBarIconsEnabled": true,
@@ -680,15 +693,20 @@
     "info": "🔅",
     "hint": "🤖"
   },
+  "errorLens.enabledDiagnosticLevels": ["warning", "error", "hint"],
   "errorLens.gutterIconSize": "auto",
   "errorLens.delay": 500,
-  "errorLens.fontWeight": "bold",
+  "errorLens.fontWeight": "normal",
 
   // ----------- Project Manager Settings -----------
   "projectManager.git.baseFolders": ["~/Github"],
 
   // ----------- Vite Settings -----------
   "vite.autoStart": false,
+  "vite.devCommand": "yarn dev",
+  "vite.buildCommand": "yarn build",
+  "vite.https": true,
+  "vite.port": 5173,
 
   // ----------- Code Runner Settings -----------
   "code-runner.runInTerminal": true,
@@ -703,5 +721,15 @@
     "rgba(127,255,127,0.3)",
     "rgba(255,127,255,0.3)",
     "rgba(79,236,236,0.3)"
-  ]
+  ],
+
+  // ----------- Better Comments Settings -----------
+  "better-comments.highlightPlainText": true,
+
+  // ----------- Animations Settings -----------
+  "animations.Install-Method": "Apc Customize UI++",
+  "animations.CursorAnimation": true,
+  "animations.CursorAnimationOptions": {
+    "Color": "#29B6F6"
+  }
 }
