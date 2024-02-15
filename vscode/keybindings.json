@@ -243,13 +243,52 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+cmd+f",
+    "key": "ctrl+f",
     "command": "workbench.action.toggleMaximizeEditorGroup",
     "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
   },
   {
-    "key": "ctrl+cmd+f",
+    "key": "ctrl+f",
     "command": "-workbench.action.toggleFullScreen",
     "when": "!isIOS"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "gitlens.toggleMaximizedGraph",
+    "when": " gitlens.views.graph.active && !editorFocus"
+  },
+  {
+    "key": "shift+alt+w",
+    "command": "workbench.action.closePanel"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "gitlens.key.left",
+    "when": "gitlens:key:left"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "gitlens.key.right",
+    "when": "gitlens:key:right"
+  },
+  {
+    "key": "shift+alt+c",
+    "command": "-turboConsoleLog.commentAllLogMessages"
+  },
+  {
+    "key": "shift+alt+d",
+    "command": "-turboConsoleLog.deleteAllLogMessages"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "-turboConsoleLog.displayLogMessage"
+  },
+  {
+    "key": "shift+alt+u",
+    "command": "-turboConsoleLog.uncommentAllLogMessages"
+  },
+  {
+    "key": "shift+alt+c",
+    "command": "git.commitAll"
   }
 ]

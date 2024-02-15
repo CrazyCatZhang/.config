@@ -6,12 +6,13 @@
   "workbench.colorTheme": "Material Theme Ocean",
   "workbench.editor.tabSizing": "shrink",
   "workbench.iconTheme": "material-icon-theme",
-  // "workbench.settings.editor": "json",
-  "workbench.statusBar.visible": false,
   "workbench.list.smoothScrolling": true,
+  "workbench.editor.wrapTabs": true,
   "workbench.colorCustomizations": {
     "editorCursor.foreground": "#29B6F6",
     "editorCursor.background": "#29B6F6",
+    "terminalCursor.foreground": "#29B6F6",
+    "terminalCursor.background": "#29B6F6",
     "sideBar.border": "#00000000",
     "statusBar.border": "#00000000",
     "terminal.border": "#00000000",
@@ -90,7 +91,6 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.lineNumbers": "relative",
-  "explorer.confirmDragAndDrop": false,
   "editor.fontSize": 18,
   "editor.fontFamily": "JetBrains Mono,Menlo, Monaco, 'Courier New', monospace,MesloLGS NF",
   "editor.fontLigatures": true,
@@ -113,6 +113,12 @@
   "editor.smoothScrolling": true,
   "editor.fontWeight": "normal",
   "editor.tabSize": 2,
+  "editor.tabCompletion": "on",
+  "editor.inlineSuggest.enabled": true,
+  "editor.snippetSuggestions": "bottom",
+  "editor.stickyScroll.enabled": true,
+  "editor.inlayHints.enabled": "on",
+  "editor.inlayHints.padding": false,
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -295,6 +301,7 @@
    * Other Settings
    */
   "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
   "breadcrumbs.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
 
@@ -541,15 +548,15 @@
       "commands": ["projectManager.listProjects"]
     },
     {
-      "before": ["<leader>", "l", "a"],
+      "before": ["<leader>", "p", "a"],
       "commands": ["projectManager.listAnyProjects#sideBarAny"]
     },
     {
-      "before": ["<leader>", "l", "f"],
+      "before": ["<leader>", "m", "f"],
       "commands": ["projectManager.listFavoriteProjects#sideBarFavorites"]
     },
     {
-      "before": ["<leader>", "l", "g"],
+      "before": ["<leader>", "p", "g"],
       "commands": ["projectManager.listGitProjects#sideBarGit"]
     },
     {
@@ -573,7 +580,7 @@
       "commands": ["todo-tree.showTreeView"]
     },
     {
-      "before": ["<leader>", "j", "a"],
+      "before": ["<leader>", "n", "a"],
       "commands": ["console-ninja.start"]
     },
     {
@@ -581,16 +588,74 @@
       "commands": ["console-ninja.showOutput"]
     },
     {
-      "before": ["<leader>", "l", "v"],
+      "before": ["<leader>", "n", "v"],
       "commands": ["console-ninja.watchLocationValue"]
     },
     {
-      "before": ["<leader>", "l", "e"],
+      "before": ["<leader>", "n", "e"],
       "commands": ["console-ninja.goToLatestErrorSource"]
     },
     {
       "before": ["<leader>", "s", "s"],
       "commands": ["console-ninja.searchLogs"]
+    },
+    {
+      "before": ["<leader>", "g", "l"],
+      "commands": ["workbench.view.extension.gitlens"]
+    },
+    {
+      "before": ["<leader>", "g", "h"],
+      "commands": ["gitlens.toggleGraph"]
+    },
+    {
+      "before": ["<leader>", "g", "m"],
+      "commands": ["gitlens.gitCommands"]
+    },
+    {
+      "before": ["<leader>", "t", "f"],
+      "commands": ["gitlens.toggleFileChanges"]
+    },
+    {
+      "before": ["<leader>", "r", "e"],
+      "commands": ["gitlens.diffWithRevision"]
+    },
+    {
+      "before": ["<leader>", "f", "p"],
+      "commands": ["gitlens.diffWithPrevious"]
+    },
+    {
+      "before": ["<leader>", "f", "n"],
+      "commands": ["gitlens.diffWithNext"]
+    },
+    {
+      "before": ["<leader>", "g", "s"],
+      "commands": ["git.stageAll"]
+    },
+    {
+      "before": ["<leader>", "o", "c"],
+      "commands": ["git.openChange"]
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["git.commitMessageAccept"]
+    },
+    {
+      "before": ["<leader>", "c", "d"],
+      "commands": ["git.commitMessageDiscard"]
+    },
+    {
+      "before": ["<leader>", "d", "p"],
+      "commands": [
+        "workbench.action.editor.previousChange",
+        "editor.action.dirtydiff.previous"
+      ]
+    },
+    {
+      "before": ["<leader>", "d", "n"],
+      "commands": [
+        "workbench.action.editor.nextChange",
+        "editor.action.dirtydiff.next"
+      ]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
@@ -730,6 +795,14 @@
   "animations.Install-Method": "Apc Customize UI++",
   "animations.CursorAnimation": true,
   "animations.CursorAnimationOptions": {
-    "Color": "#29B6F6"
-  }
+    "Color": "#29B6F6",
+    "CursorStyle": "line"
+  },
+
+  // ----------- Git Settings -----------
+  "git.autofetch": true,
+  "gitlens.statusBar.enabled": false,
+  "gitlens.changes.toggleMode": "window",
+  "gitlens.heatmap.toggleMode": "window",
+  "workbench.statusBar.visible": false
 }
