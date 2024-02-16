@@ -656,6 +656,14 @@
         "workbench.action.editor.nextChange",
         "editor.action.dirtydiff.next"
       ]
+    },
+    {
+      "before": ["<leader>", "p", "c"],
+      "commands": ["workbench.action.openQuickChat.copilot"]
+    },
+    {
+      "before": ["<leader>", "c", "s"],
+      "commands": ["workbench.panel.chat.view.copilot.focus"]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
@@ -792,6 +800,8 @@
   "better-comments.highlightPlainText": true,
 
   // ----------- Animations Settings -----------
+  "animations.Enabled": true,
+  "animations.Command-Palette": "Slide",
   "animations.Install-Method": "Apc Customize UI++",
   "animations.CursorAnimation": true,
   "animations.CursorAnimationOptions": {

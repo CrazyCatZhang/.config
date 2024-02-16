@@ -290,5 +290,13 @@
   {
     "key": "shift+alt+c",
     "command": "git.commitAll"
+  },
+  {
+    "key": "cmd+c cmd+h",
+    "command": "workbench.action.chat.copilot.history"
+  },
+  {
+    "key": "cmd+c cmd+n",
+    "command": "workbench.action.chat.copilot.newChat"
   }
 ]
