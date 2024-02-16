@@ -1,7 +1,7 @@
 #!/bin/bash
 
 front_app=(
-	label.font="Operator Mono Ssm Lig:Medium Italic:12.0"
+	label.font="MonaspiceRn Nerd Font Propo:Bold Italic:12.0"
 
 	icon.background.drawing=on
 	display=active
