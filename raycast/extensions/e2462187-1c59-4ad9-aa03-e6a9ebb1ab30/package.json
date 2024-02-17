@@ -1,0 +1,119 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "file-manager",
+  "title": "File Manager",
+  "description": "Manage files from Raycast",
+  "icon": "command-icon.png",
+  "author": "erics118",
+  "contributors": [
+    "BalliAsghar",
+    "urwrstkn8mare",
+    "fengtianze"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "manage-files",
+      "title": "Manage Files",
+      "subtitle": "File Manager",
+      "description": "Traverse the file system and create files in Raycast",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "default": "~",
+      "description": "Starting directory for the command. ~ is expanded into your home directory",
+      "name": "startDirectory",
+      "required": true,
+      "title": "Start Directory",
+      "type": "textfield"
+    },
+    {
+      "default": false,
+      "description": "Show files and directories with uppercase letters before ones with lowercase letters",
+      "label": "Case Sensitive",
+      "name": "caseSensitive",
+      "required": true,
+      "title": "Appearance",
+      "type": "checkbox"
+    },
+    {
+      "default": false,
+      "description": "Show directories before other files",
+      "label": "Directories First",
+      "name": "directoriesFirst",
+      "required": true,
+      "title": "",
+      "type": "checkbox"
+    },
+    {
+      "default": false,
+      "description": "Show dotfiles (files and directories that start with a .)",
+      "label": "Show Dotfiles",
+      "name": "showDots",
+      "required": true,
+      "title": "",
+      "type": "checkbox"
+    },
+    {
+      "default": false,
+      "description": "Show the permissions of files",
+      "label": "Show File Permissions",
+      "name": "showFilePermissions",
+      "required": true,
+      "title": "",
+      "type": "checkbox"
+    },
+    {
+      "default": true,
+      "description": "Show file size",
+      "label": "Show File Size",
+      "name": "showFileSize",
+      "required": true,
+      "title": "",
+      "type": "checkbox"
+    },
+    {
+      "default": false,
+      "description": "Show Delete Actions",
+      "label": "Show Delete Actions",
+      "name": "showDeleteActions",
+      "required": true,
+      "title": "",
+      "type": "checkbox"
+    },
+    {
+      "default": false,
+      "description": "Use ctrl + x to Move to Trash, ctrl + shift + x to Delete",
+      "label": "Standard Action Shortcuts",
+      "name": "standardShortcuts",
+      "required": true,
+      "title": "",
+      "type": "checkbox"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.59.0",
+    "@raycast/utils": "^1.10.1",
+    "filesize": "^10.0.20"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.6",
+    "@types/node": "~20.6.0",
+    "@types/react": "^18.2.21",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "react-devtools": "^4.28.0",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "lint": "ray lint",
+    "fix-lint": "ray lint --fix",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
