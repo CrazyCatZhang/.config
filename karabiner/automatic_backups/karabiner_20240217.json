@@ -223,16 +223,6 @@
                             "key_code": "escape"
                         }
                     ]
-                },
-                {
-                    "from": {
-                        "key_code": "right_shift"
-                    },
-                    "to": [
-                        {
-                            "key_code": "f19"
-                        }
-                    ]
                 }
             ],
             "virtual_hid_keyboard": {
