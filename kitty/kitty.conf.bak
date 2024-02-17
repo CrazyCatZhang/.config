@@ -3,9 +3,11 @@
 # https://sw.kovidgoyal.net/kitty/conf/
 
 # To get a full list of supported fonts use the `kitty +list-fonts` command.
-font_family     Hack Nerd Font Mono
-#font_family      JetBrainsMono Nerd Font
-font_size 16.0
+font_family			 MonaspiceRn Nerd Font Propo Bold
+bold_font				 MonaspiceRn Nerd Font Propo Bold
+italic_font      MonaspiceRn Nerd Font Propo Medium Italic
+bold_italic_font MonaspiceRn Nerd Font Propo Bold Italic
+font_size 18.0
 
 scrollback_lines 8000
 
@@ -103,6 +105,7 @@ tab_title_template "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{index
 
 #background_opacity 0.95
 background_opacity 0.8
+background_blur    32
 
 
 
@@ -270,7 +273,7 @@ map ctrl+a>shift+d     debug_config
 
 
 # BEGIN_KITTY_THEME
-# Ayu
+# Breath2
 include current-theme.conf
 # END_KITTY_THEME
 
@@ -298,3 +301,10 @@ confirm_os_window_close 0
 
 # this one is optional, as hammerspoon script would move window in script line 45
 remember_window_size  yes
+
+# make the kitty is fullscreen on mac
+macos_traditional_fullscreen yes
+
+# option ---> alt
+macos_option_as_alt yes
+
