@@ -98,8 +98,8 @@ sketchy_topbar --add item command.logo left                                     
                                                  sketchy_topbar -m --set command.logo popup.drawing=off"
 
 sketchy_topbar --add bracket cmd command.logo                         \
-           --set         cmd background.color=$COLOR_BACKGROUND   \
-                             background.border_color=$COLOR_GREEN
+           --set         cmd background.color=$COLOR_FIVE    \
+                             background.border_color=$COLOR_GREEN_BRIGHT
 
 sketchy_topbar --add item seperator.l1 left                   \
            --set      seperator.l1 padding_left=4         \
