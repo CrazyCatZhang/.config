@@ -2,20 +2,22 @@
 
 source "$HOME/.config/colors.sh"
 source "$HOME/.config/icons.sh"
+source "$HOME/.config/sketchy_topbar/icons.sh"
+source "$HOME/.config/sketchy_topbar/colors.sh"
 
-IP_ADDRESS=$(/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -I | awk -F ' SSID: '  '/ SSID: / {print $2}')
+IP_ADDRESS=$(/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -I | awk -F ' SSID: ' '/ SSID: / {print $2}')
 IS_VPN=$(scutil --nwi | grep -m1 'utun' | awk '{ print $1 }')
 
 if [[ $IS_VPN != "" ]]; then
-	COLOR=$X_BROWN
+	COLOR=$COLOR_SEVEN
 	ICON=$ICON_VPN
 	LABEL="VPN"
 elif [[ $IP_ADDRESS != "" ]]; then
-	COLOR=$X_BROWN
+	COLOR=$COLOR_SEVEN
 	ICON=$ICON_WIFI
 	LABEL=$IP_ADDRESS
 else
-	COLOR=$X_BROWN_DULL
+	COLOR=$COLOR_FIVE
 	ICON=$ICON_WIFI_OFF
 	LABEL="Not Connected"
 fi

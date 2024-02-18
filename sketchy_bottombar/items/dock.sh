@@ -33,10 +33,10 @@ terminal=(
 	icon=$ICON_TERM
 	icon.font=$ICON_FONT
 	padding_right=6
-	click_script='open -a "iTerm2"'
+	click_script='open -a "kitty"'
 	icon.padding_right=0
 	icon.padding_left=10
-	background.color=$X_BROWN_DULL
+	background.color=$COLOR_FIVE
 	background.height=38
 
 )
@@ -51,7 +51,7 @@ teams=(
 	icon.padding_right=0
 	padding_right=6
 	icon.padding_left=10
-	background.color=$X_BROWN_DULL
+	background.color=$COLOR_FIVE
 	background.height=38
 
 )
@@ -66,7 +66,7 @@ vscode=(
 	padding_right=6
 	icon.padding_right=0
 	icon.padding_left=10
-	background.color=$X_BROWN_DULL
+	background.color=$COLOR_FIVE
 	background.height=38
 
 )
@@ -81,7 +81,7 @@ spotify=(
 	icon.padding_right=-1
 	icon.padding_left=11
 	padding_right=6
-	background.color=$X_BROWN_DULL
+	background.color=$COLOR_FIVE
 	background.height=38
 
 )
@@ -96,7 +96,7 @@ finder=(
 	padding_right=6
 	icon.padding_right=-3
 	icon.padding_left=10
-	background.color=$X_BROWN_DULL
+	background.color=$COLOR_FIVE
 	background.height=38
 
 )
@@ -107,11 +107,11 @@ sketchy_bottombar --add item finder center \
 browser=(
 	icon=$ICON_WEB
 	icon.font=$ICON_FONT
-	click_script='open -a "Goole Chrome"'
+	click_script='open -a "Arc"'
 	icon.padding_right=0
 	icon.padding_left=10
 	padding_right=6
-	background.color=$X_BROWN_DULL
+	background.color=$COLOR_FIVE
 	background.height=38
 
 )
@@ -126,7 +126,7 @@ settings=(
 	icon.padding_right=-1
 	icon.padding_left=10
 	padding_right=6
-	background.color=$X_BROWN_DULL
+	background.color=$COLOR_FIVE
 	background.height=38
 
 )

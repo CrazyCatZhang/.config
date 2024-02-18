@@ -1,18 +1,20 @@
 #!/bin/bash
 
+source "$HOME/.config/sketchy_topbar/icons.sh"
+source "$HOME/.config/sketchy_topbar/colors.sh"
+
 front_app=(
-	label.font="MonaspiceRn Nerd Font Propo:Bold Italic:12.0"
+	label.font="MonaspiceRn Nerd Font Propo:Bold Italic:13.0"
 
 	icon.background.drawing=on
 	display=active
 	label.color=$WHITE
 	shadow=on
 
-	background.border_color==$X_BROWN_DULL
-	background.border_color==$X_BROWN
+	background.border_color==$COLOR_FIVE
+	background.border_color==$COLOR_SEVEN
 	icon.padding_left=19
-	background.color=$X_BROWN_DULL_TWO
-
+	# background.color=$COLOR_FIVE
 	label.padding_right=10
 	icon.drawing=on
 	icon.background.image.scale=0.8
@@ -29,4 +31,4 @@ sketchy_topbar --add item front_app center \
 	--subscribe front_app front_app_switched
 
 # sketchy_topbar --add bracket front_app \
-# 	--set front_app background.color=$X_BROWN_DULL_TWO background.border_color=$X_BROWN
+# 	--set front_app background.color=$X_BROWN_DULL_TWO background.border_color=$COLOR_SEVEN
