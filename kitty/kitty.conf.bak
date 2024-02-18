@@ -7,7 +7,7 @@ font_family			 MonaspiceRn Nerd Font Propo Bold
 bold_font				 MonaspiceRn Nerd Font Propo Bold
 italic_font      MonaspiceRn Nerd Font Propo Medium Italic
 bold_italic_font MonaspiceRn Nerd Font Propo Bold Italic
-font_size 18.0
+font_size 14.0
 
 scrollback_lines 8000
 
@@ -273,7 +273,7 @@ map ctrl+a>shift+d     debug_config
 
 
 # BEGIN_KITTY_THEME
-# Breath2
+# ENCOM
 include current-theme.conf
 # END_KITTY_THEME
 
