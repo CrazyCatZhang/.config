@@ -21,4 +21,6 @@ export PATH="/Applications/iTerm.app/Contents/Resources:${PATH}"
 
 export TERM=xterm-256color
 
-export EDITOR=nvim
+export EDITOR=lvim
+
+export PATH="/Users/crazycatzhang/.local/bin:$PATH"
