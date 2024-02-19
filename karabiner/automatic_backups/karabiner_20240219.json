@@ -226,17 +226,7 @@
                 },
                 {
                     "from": {
-                        "key_code": "escape"
-                    },
-                    "to": [
-                        {
-                            "apple_vendor_top_case_key_code": "keyboard_fn"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "apple_vendor_top_case_key_code": "keyboard_fn"
+                        "key_code": "right_shift"
                     },
                     "to": [
                         {
