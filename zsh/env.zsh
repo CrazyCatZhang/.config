@@ -24,3 +24,6 @@ export TERM=xterm-256color
 export EDITOR=lvim
 
 export PATH="/Users/crazycatzhang/.local/bin:$PATH"
+
+export PATH="$PATH:/Users/crazycatzhang/.cargo/bin"
+
