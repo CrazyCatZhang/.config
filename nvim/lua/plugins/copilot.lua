@@ -8,8 +8,8 @@ return {
       vim.api.nvim_set_keymap("n", "<leader>gE", ":Copilot enable<CR>", { silent = true })
       vim.api.nvim_set_keymap("n", "<leader>gD", ":Copilot disable<CR>", { silent = true })
       vim.api.nvim_set_keymap("i", "<c-p>", "<Plug>(copilot-suggest)", { noremap = true })
-      vim.api.nvim_set_keymap("i", "<c-n>", "<Plug>(copilot-next)", { noremap = true, silent = true })
-      vim.api.nvim_set_keymap("i", "<c-l>", "<Plug>(copilot-previous)", { noremap = true, silent = true })
+      vim.api.nvim_set_keymap("i", "<c-j>", "<Plug>(copilot-next)", { noremap = true, silent = true })
+      vim.api.nvim_set_keymap("i", "<c-k>", "<Plug>(copilot-previous)", { noremap = true, silent = true })
       vim.cmd('imap <silent><script><expr> <C-C> copilot#Accept("")')
       vim.cmd([[
 			let g:copilot_filetypes = {

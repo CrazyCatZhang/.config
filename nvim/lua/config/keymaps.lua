@@ -84,8 +84,8 @@ local nmappings = {
   -- Tab management
   { from = "tu", to = ":tabe<CR>" },
   { from = "tU", to = ":tab split<CR>" },
-  { from = "tn", to = ":-tabnext<CR>" },
-  { from = "ti", to = ":+tabnext<CR>" },
+  { from = "tp", to = ":-tabnext<CR>" },
+  { from = "tn", to = ":+tabnext<CR>" },
   { from = "tmn", to = ":-tabmove<CR>" },
   { from = "tmi", to = ":+tabmove<CR>" },
 
