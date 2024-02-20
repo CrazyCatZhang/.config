@@ -216,16 +216,6 @@
             "simple_modifications": [
                 {
                     "from": {
-                        "apple_vendor_top_case_key_code": "keyboard_fn"
-                    },
-                    "to": [
-                        {
-                            "key_code": "f19"
-                        }
-                    ]
-                },
-                {
-                    "from": {
                         "key_code": "caps_lock"
                     },
                     "to": [
@@ -246,11 +236,11 @@
                 },
                 {
                     "from": {
-                        "key_code": "right_shift"
+                        "apple_vendor_top_case_key_code": "keyboard_fn"
                     },
                     "to": [
                         {
-                            "key_code": "home"
+                            "key_code": "f19"
                         }
                     ]
                 }
