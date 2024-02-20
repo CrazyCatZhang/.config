@@ -39,6 +39,12 @@ M.fzf_projects = function()
   })
 end
 
+M.set_custom_keymaps = function()
+  vim.keymap.set("n", "Q", ":q<CR>", { noremap = true })
+  vim.keymap.set("n", "W", ":w<CR>", { noremap = true })
+  vim.keymap.set({ "n", "v" }, ";", ":", { noremap = true })
+end
+
 M.set_terminal_keymaps = function()
   local opts = { noremap = true }
   vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
@@ -219,6 +225,9 @@ M.set_lsp_lines_keymap = function()
 end
 
 M.config = function()
+  -- Custom keybindings
+  -- =========================================
+  M.set_custom_keymaps()
   -- Additional keybindings
   -- =========================================
   lvim.keys.normal_mode["<CR>"] = {
@@ -333,7 +342,6 @@ M.config = function()
   lvim.builtin.which_key.mappings["h"] = { "<cmd>nohlsearch<CR>", "󰸱 No Highlight" }
   lvim.builtin.which_key.mappings.g.name = " Git"
   if vim.fn.has "nvim-0.10" == 1 then
-
     lvim.builtin.which_key.mappings["I"] = { "<cmd>lua require('user.neovim').inlay_hints()<cr>", " Toggle Inlay" }
   end
   lvim.builtin.which_key.mappings.l.name = " LSP"
