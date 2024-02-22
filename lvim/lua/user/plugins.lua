@@ -233,8 +233,8 @@ M.config = function()
       end,
       dependencies = {
         "nvim-treesitter/nvim-treesitter",
-        config =function()
-          require("nvim-treesitter.install").prefer_git = true 
+        config = function()
+          require("nvim-treesitter.install").prefer_git = true
         end,
       },
     },
@@ -645,6 +645,22 @@ M.config = function()
       end,
       dependencies = {
         "rcarriga/nvim-notify",
+        config = function()
+          local notify = require "notify"
+          notify.setup {
+            on_open = function(win)
+              vim.api.nvim_win_set_config(win, { border = "none" })
+            end,
+            background_colour = "#202020",
+            fps = 60,
+            level = 2,
+            minimum_width = 50,
+            render = "compact",
+            stages = "fade_in_slide_out",
+            timeout = 3000,
+            top_down = true,
+          }
+        end,
       },
       enabled = lvim.builtin.noice.active,
     },

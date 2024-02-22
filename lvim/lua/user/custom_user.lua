@@ -9,7 +9,7 @@ M.config = function()
   end
 
   lvim.builtin.lsp_lines = true
-  vim.diagnostic.config { virtual_lines = false } -- i only want to use it explicitly ( by calling the toggle function)
+  vim.diagnostic.config { virtual_lines = true } -- i only want to use it explicitly ( by calling the toggle function)
   lvim.builtin.tmux_lualine = true
   if lvim.builtin.tmux_lualine then
     vim.opt.cmdheight = 0
@@ -43,7 +43,7 @@ M.config = function()
   }
   lvim.builtin.smooth_scroll = "cinnamon"
   lvim.builtin.tree_provider = "neo-tree"
-  lvim.builtin.noice.active = false
+  lvim.builtin.noice.active = true
   lvim.builtin.go_programming.active = true
   lvim.builtin.python_programming.active = true
   lvim.builtin.web_programming.active = true
@@ -59,17 +59,9 @@ M.config = function()
   lvim.builtin.symbols_usage.active = true
   lvim.builtin.tag_provider = "outline"
   -- require("lvim.lsp.manager").setup("prosemd_lsp", {})
-
-  lvim.builtin.sell_your_soul_to_devil = { active = true, prada = false }
   lvim.builtin.fancy_diff = { active = true }
-  lvim.builtin.dap.active = true
-  lvim.builtin.motion_provider = "flash"
   lvim.builtin.nonumber_unfocus = true
   lvim.builtin.winbar_provider = "treesitter"
-  lvim.builtin.task_runner = "async_tasks"
-  lvim.builtin.tree_provider = "neo-tree"
-  lvim.builtin.noice = { active = true}
-  lvim.builtin.fancy_wild_menu.active = true
   lvim.builtin.tabnine = { active = true}
 
 end

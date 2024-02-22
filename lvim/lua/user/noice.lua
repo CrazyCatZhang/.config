@@ -86,10 +86,6 @@ M.config = function()
           row = 5,
           col = "50%",
         },
-        size = {
-          width = 60,
-          height = "auto",
-        },
         border = {
           style = "none",
           padding = { 1, 2 },
@@ -103,24 +99,6 @@ M.config = function()
             Search = "",
           },
           cursorline = false,
-        },
-      },
-      popupmenu = {
-        relative = "editor",
-        position = {
-          row = 8,
-          col = "50%",
-        },
-        size = {
-          width = 100,
-          height = 10,
-        },
-        border = {
-          style = "rounded",
-          padding = { 0, 1 },
-        },
-        win_options = {
-          winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
         },
       },
     },
