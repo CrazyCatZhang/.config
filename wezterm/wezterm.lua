@@ -10,7 +10,6 @@ local padding = {
 }
 
 local SOLID_RIGHT_ARROW = utf8.char(0xe0b0)
-local dimmer = { brightness = 0.1 }
 local Grey = "#0f1419"
 local LightGrey = "#191f26"
 
