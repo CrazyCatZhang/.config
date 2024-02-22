@@ -169,6 +169,7 @@ M.config = function()
         filter = { find = "waiting for cargo metadata" },
         opts = { skip = true },
       },
+      { filter = { kind = "warn" }, opts = { skip = true } },
     },
   }
 end

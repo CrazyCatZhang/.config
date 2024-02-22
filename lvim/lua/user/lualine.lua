@@ -1,5 +1,6 @@
 local M = {}
 local kind = require "user.lsp_kind"
+-- local navic = require "nvim-navic"
 
 local function clock()
   return kind.icons.clock .. os.date "%H:%M"
@@ -206,6 +207,18 @@ M.config = function()
       lualine_c = {},
       lualine_x = {},
     },
+    -- winbar = {
+    --   lualine_c = {
+    --     {
+    --       function()
+    --         return navic.get_location()
+    --       end,
+    --       cond = function()
+    --         return navic.is_available()
+    --       end,
+    --     },
+    --   },
+    -- },
     inactive_sections = {
       -- these are to remove the defaults
       lualine_a = {},

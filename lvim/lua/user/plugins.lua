@@ -27,7 +27,6 @@ M.config = function()
       cond = function()
         local _time = os.date "*t"
         return (_time.hour >= 1 and _time.hour < 9) and lvim.builtin.time_based_themes
-        -- return false
       end,
     },
     {
@@ -612,6 +611,15 @@ M.config = function()
       dependencies = "nvim-treesitter/nvim-treesitter",
       event = { "InsertEnter", "CursorHoldI" },
       enabled = lvim.builtin.winbar_provider == "treesitter",
+    },
+    {
+      "SmiteshP/nvim-navic",
+      config = function()
+        require("user.navic").config()
+      end,
+      dependencies = "neovim/nvim-lspconfig",
+      event = { "InsertEnter", "CursorHoldI" },
+      enabled = false,
     },
     {
       "vimpostor/vim-tpipeline",
