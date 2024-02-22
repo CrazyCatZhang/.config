@@ -63,20 +63,6 @@ M.default_diagnostic_config = {
 }
 
 M.config = function()
-  -- Custom Settings
-  -- =========================================
-  lvim.builtin.sell_your_soul_to_devil = { active = true, prada = false }
-  lvim.builtin.fancy_diff = { active = true }
-  lvim.builtin.dap.active = true
-  lvim.builtin.motion_provider = "flash"
-  lvim.builtin.nonumber_unfocus = true
-  lvim.builtin.winbar_provider = "treesitter"
-  lvim.builtin.task_runner = "async_tasks"
-  lvim.builtin.tree_provider = "neo-tree"
-  lvim.builtin.noice = { active = true}
-  lvim.builtin.fancy_wild_menu.active = true
-  lvim.builtin.tabnine = { active = false }
-
   if lvim.builtin.lsp_lines then
     M.default_diagnostic_config.virtual_text = false
   end

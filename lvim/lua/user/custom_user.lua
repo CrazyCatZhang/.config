@@ -59,6 +59,19 @@ M.config = function()
   lvim.builtin.symbols_usage.active = true
   lvim.builtin.tag_provider = "outline"
   -- require("lvim.lsp.manager").setup("prosemd_lsp", {})
+
+  lvim.builtin.sell_your_soul_to_devil = { active = true, prada = false }
+  lvim.builtin.fancy_diff = { active = true }
+  lvim.builtin.dap.active = true
+  lvim.builtin.motion_provider = "flash"
+  lvim.builtin.nonumber_unfocus = true
+  lvim.builtin.winbar_provider = "treesitter"
+  lvim.builtin.task_runner = "async_tasks"
+  lvim.builtin.tree_provider = "neo-tree"
+  lvim.builtin.noice = { active = true}
+  lvim.builtin.fancy_wild_menu.active = true
+  lvim.builtin.tabnine = { active = true}
+
 end
 
 return M
