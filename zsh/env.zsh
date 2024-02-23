@@ -27,3 +27,4 @@ export PATH="/Users/crazycatzhang/.local/bin:$PATH"
 
 export PATH="$PATH:/Users/crazycatzhang/.cargo/bin"
 
+export PATH=~/.console-ninja/.bin:$PATH
