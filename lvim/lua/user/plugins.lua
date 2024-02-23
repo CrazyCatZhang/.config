@@ -10,7 +10,7 @@ M.config = function()
       "folke/tokyonight.nvim",
       config = function()
         require("user.theme").tokyonight()
-        vim.cmd [[colorscheme tokyonight]]
+        lvim.colorscheme = "tokyonight"
       end,
       cond = function()
         local _time = os.date "*t"
@@ -515,6 +515,9 @@ M.config = function()
     {
       "nvim-telescope/telescope-file-browser.nvim",
       enabled = lvim.builtin.file_browser.active,
+    },
+    {
+      "nvim-telescope/telescope-live-grep-args.nvim",
     },
     {
       "j-hui/fidget.nvim",
