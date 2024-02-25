@@ -1,3 +1,5 @@
+source ~/.config/zsh/homebrew.zsh
+
 source ~/.config/zsh/env.zsh
 
 source ~/.config/zsh/theme.zsh
@@ -13,3 +15,4 @@ source ~/.config/zsh/vi.zsh
 source ~/.config/zsh/fzf.zsh
 
 source ~/.config/zsh/mappping.zsh
+
