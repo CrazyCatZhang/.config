@@ -1,29 +1,57 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
+# export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+
+if [[ ":$PATH:" != *":/usr/local/opt/openjdk/bin:"* ]]; then
+    export PATH="/usr/local/opt/openjdk/bin:$PATH"
+fi
 
 export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
-export PATH="/usr/local/opt/ruby@3.1/bin:$PATH"
+if [[ ":$PATH:" != *":/usr/local/opt/ruby@3.1/bin:"* ]]; then
+    export PATH="/usr/local/opt/ruby@3.1/bin:$PATH"
+fi
+
 export LDFLAGS="-L/usr/local/opt/ruby@3.1/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby@3.1/include"
 
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 
 export PKG_CONFIG_PATH="/usr/local/opt/xcb-util-image/lib/pkgconfig:$PKG_CONFIG_PATH"
 
-export PATH="/usr/local/sbin:$PATH"
+if [[ ":$PATH:" != *":/usr/local/sbin:"* ]]; then
+    export PATH="/usr/local/sbin:$PATH"
+fi
 
-export PATH="/Applications/iTerm.app/Contents/Resources:${PATH}"
+if [[ ":$PATH:" != *":/Applications/iTerm.app/Contents/Resources:"* ]]; then
+    export PATH="/Applications/iTerm.app/Contents/Resources:${PATH}"
+fi
 
 export TERM=xterm-256color
 
 export EDITOR=lvim
 
-export PATH="/Users/crazycatzhang/.local/bin:$PATH"
+if [[ ":$PATH:" != *":/Users/crazycatzhang/.local/bin:"* ]]; then
+    export PATH="/Users/crazycatzhang/.local/bin:$PATH"
+fi
 
-export PATH="$PATH:/Users/crazycatzhang/.cargo/bin"
+if [[ ":$PATH:" != *":/Users/crazycatzhang/.cargo/bin:"* ]]; then
+    export PATH="$PATH:/Users/crazycatzhang/.cargo/bin"
+fi
 
-export PATH=~/.console-ninja/.bin:$PATH
+if [[ ":$PATH:" != *":~/.console-ninja/.bin:"* ]]; then
+    export PATH="~/.console-ninja/.bin:$PATH"
+fi
+
+if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+  if [[ -n "$PATH" ]]; then
+    export PATH="$PATH:/usr/local/opt/fzf/bin"
+  else
+    export PATH="/usr/local/opt/fzf/bin"
+  fi
+fi
+
+export PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!seen[$0]++' | sed 's/:$//')
+
