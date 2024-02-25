@@ -4,7 +4,6 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
-export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 export PATH="/usr/local/opt/ruby@3.1/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/ruby@3.1/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby@3.1/include"
