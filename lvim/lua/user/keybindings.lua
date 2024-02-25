@@ -40,9 +40,11 @@ M.fzf_projects = function()
 end
 
 M.set_custom_keymaps = function()
-  vim.keymap.set("n", "Q", ":q<CR>", { noremap = true })
-  vim.keymap.set("n", "W", ":w<CR>", { noremap = true })
   vim.keymap.set({ "n", "v" }, ";", ":", { noremap = true })
+  vim.keymap.set({ "n", "v" }, "J", "5j", { noremap = true })
+  vim.keymap.set({ "n", "v" }, "H", "^", { noremap = true })
+  vim.keymap.set({ "n", "v" }, "L", "$", { noremap = true })
+  vim.keymap.set("v", "K", "5k", { noremap = true })
 end
 
 M.set_terminal_keymaps = function()
@@ -118,8 +120,8 @@ end
 
 local function set_bufferline_keymaps()
   lvim.keys.normal_mode["<S-x>"] = "<Cmd>lua require('user.bufferline').delete_buffer()<CR>"
-  lvim.keys.normal_mode["<S-l>"] = "<Cmd>BufferLineCycleNext<CR>"
-  lvim.keys.normal_mode["<S-h>"] = "<Cmd>BufferLineCyclePrev<CR>"
+  lvim.keys.normal_mode["tl"] = "<Cmd>BufferLineCycleNext<CR>"
+  lvim.keys.normal_mode["th"] = "<Cmd>BufferLineCyclePrev<CR>"
   lvim.keys.normal_mode["[b"] = "<Cmd>BufferLineMoveNext<CR>"
   lvim.keys.normal_mode["]b"] = "<Cmd>BufferLineMovePrev<CR>"
   lvim.builtin.which_key.mappings["c"] = {}
@@ -225,9 +227,6 @@ M.set_lsp_lines_keymap = function()
 end
 
 M.config = function()
-  -- Custom keybindings
-  -- =========================================
-  M.set_custom_keymaps()
   -- Additional keybindings
   -- =========================================
   lvim.keys.normal_mode["<CR>"] = {
@@ -339,7 +338,7 @@ M.config = function()
     lvim.builtin.which_key.mappings["se"] = { "<cmd>Telescope file_browser<cr>", "File Browser" }
   end
   lvim.builtin.which_key.mappings["H"] = "󰞋 Help"
-  lvim.builtin.which_key.mappings["h"] = { "<cmd>nohlsearch<CR>", "󰸱 No Highlight" }
+  lvim.builtin.which_key.mappings["h"] = "󰸱 Show Documentation"
   lvim.builtin.which_key.mappings.g.name = " Git"
   if vim.fn.has "nvim-0.10" == 1 then
     lvim.builtin.which_key.mappings["I"] = { "<cmd>lua require('user.neovim').inlay_hints()<cr>", " Toggle Inlay" }
@@ -506,6 +505,10 @@ M.config = function()
     ["]n"] = { "[[:call search('^(@@ .* @@|[<=>|]{7}[<=>|]@!)', 'W')<cr>]]", "next merge conflict" },
     ["[n"] = { "[[:call search('^(@@ .* @@|[<=>|]{7}[<=>|]@!)', 'bW')<cr>]]", "prev merge conflict" },
   }
+
+  -- Custom keybindings
+  -- =========================================
+  M.set_custom_keymaps()
 end
 
 M.set_mind_keymaps = function()

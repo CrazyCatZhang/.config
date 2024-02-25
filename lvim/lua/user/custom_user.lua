@@ -62,8 +62,11 @@ M.config = function()
   lvim.builtin.fancy_diff = { active = true }
   lvim.builtin.nonumber_unfocus = true
   lvim.builtin.winbar_provider = "treesitter"
-  lvim.builtin.tabnine = { active = true}
+  lvim.builtin.tabnine = { active = true }
+  lvim.builtin.sql_integration.active = true
 
+  -- Custom keybinds
+  lvim.lsp.buffer_mappings.normal_mode["K"] = { "5k", "Up 5 lines" }
 end
 
 return M
