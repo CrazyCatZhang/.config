@@ -366,8 +366,7 @@ M.config = function()
     z = { "<cmd>lua require('user.telescope').search_only_certain_files()<cr>", "Certain Filetype" },
   }
   if lvim.builtin.legendary.active then
-    lvim.builtin.which_key.mappings["C"] =
-      { ":Legendary commands<cr>", " Command Palette" }
+    lvim.builtin.which_key.mappings["C"] = { ":Legendary commands<cr>", " Command Palette" }
     lvim.keys.normal_mode["<c-P>"] = "<cmd>lua require('legendary').find()<cr>"
   end
 
@@ -473,6 +472,10 @@ M.config = function()
   lvim.builtin.which_key.mappings["ss"] = {
     "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",
     "String",
+  }
+  lvim.builtin.which_key.mappings["sa"] = {
+    "<cmd>set spell!<cr>",
+    "Spell Alter",
   }
   if lvim.builtin.test_runner.active then
     if lvim.builtin.test_runner.runner == "neotest" then
