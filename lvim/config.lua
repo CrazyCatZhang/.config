@@ -150,3 +150,7 @@ require("user.autocommands").config()
 -- Additional Keybindings
 -- =========================================
 require("user.keybindings").config()
+
+-- Additional Scripts
+-- =========================================
+require("user.custom_scripts").config()
