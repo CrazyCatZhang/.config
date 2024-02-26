@@ -76,6 +76,7 @@ M.set_custom_keymaps = function()
     },
     { from = "srh", to = "<C-w>b<C-w>K" },
     { from = "srv", to = "<C-w>b<C-w>H" },
+    { from = "Z", to = ":lua require('yazi').open()<CR>", _, opts = { silent = true, noremap = true } },
   }
 
   for _, mapping in ipairs(mappings) do
@@ -366,7 +367,7 @@ M.config = function()
   }
   if lvim.builtin.legendary.active then
     lvim.builtin.which_key.mappings["C"] =
-      { "<cmd>lua require('legendary').find('commands')<cr>", " Command Palette" }
+      { ":Legendary commands<cr>", " Command Palette" }
     lvim.keys.normal_mode["<c-P>"] = "<cmd>lua require('legendary').find()<cr>"
   end
 

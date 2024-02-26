@@ -46,7 +46,7 @@ end
 
 M.keys = {
   {
-    "<esc>",
+    "<esc><esc>",
     mode = { "n", "x", "o" },
     function()
       require("flash").jump()

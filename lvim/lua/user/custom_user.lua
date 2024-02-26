@@ -66,10 +66,20 @@ M.config = function()
   lvim.builtin.winbar_provider = "treesitter"
   lvim.builtin.tabnine = { active = true }
   lvim.builtin.sql_integration.active = true
+  lvim.builtin.cursorline.active = true
+  lvim.builtin.hlslens.active = true
+  lvim.builtin.csv_support = true
+  lvim.builtin.file_browser.active = true
+  lvim.builtin.legendary.active = true
+  lvim.builtin.cmp.cmdline.enable = true
+  lvim.builtin.go_programming = { active = true } -- gopher.nvim + nvim-dap-go
+  lvim.builtin.python_programming = { active = true } -- swenv.nvim + nvim-dap-python + requirements.txt.vim
+  lvim.builtin.web_programming = { active = true, extra = "typescript-tools.nvim" } -- (typescript.nvim or typescript-tools.nvim) + package-info.nvim
+  lvim.builtin.rust_programming = { active = true } -- rustaceanvim + crates.nvim
+  lvim.builtin.cpp_programming = { active = true } -- clangd_extensions.nvim + make-tools.nvim
 
   -- Custom keybindings
   lvim.lsp.buffer_mappings.normal_mode["K"] = { "5k", "Up 5 lines" }
-
 end
 
 return M

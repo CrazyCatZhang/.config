@@ -894,6 +894,15 @@ M.config = function()
       end,
       enabled = (lvim.builtin.web_programming.active and lvim.builtin.web_programming.extra == "typescript-tools.nvim"),
     },
+    {
+      "SR-Mystar/yazi.nvim",
+      lazy = true,
+      cmd = "Yazi",
+      opts = {
+        border = "none",
+      },
+      keys = {},
+    },
   }
 end
 
