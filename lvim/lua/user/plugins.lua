@@ -903,6 +903,14 @@ M.config = function()
       },
       keys = {},
     },
+    {
+      "kylechui/nvim-surround",
+      version = "*",
+      event = "VeryLazy",
+      config = function()
+        require("nvim-surround").setup {}
+      end,
+    },
   }
 end
 
