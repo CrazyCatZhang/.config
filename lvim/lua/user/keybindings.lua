@@ -39,12 +39,48 @@ M.fzf_projects = function()
   })
 end
 
+-- Custom keybindings
+-- =========================================
 M.set_custom_keymaps = function()
-  vim.keymap.set({ "n", "v" }, ";", ":", { noremap = true })
-  vim.keymap.set({ "n", "v" }, "J", "5j", { noremap = true })
-  vim.keymap.set({ "n", "v" }, "H", "^", { noremap = true })
-  vim.keymap.set({ "n", "v" }, "L", "$", { noremap = true })
-  vim.keymap.set("v", "K", "5k", { noremap = true })
+  local mode_nv = { "n", "v" }
+  local mode_v = { "v" }
+  local mappings = {
+    { from = ";", to = ":", mode = mode_nv },
+    { from = "J", to = "5j", mode = mode_nv },
+    { from = "H", to = "^", mode = mode_nv },
+    { from = "L", to = "$", mode = mode_nv },
+    { from = "K", to = "5k", mode = mode_v },
+    {
+      from = "sk",
+      to = ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>",
+      mode = mode_nv,
+      opts = { silent = true, noremap = true },
+    },
+    {
+      from = "sj",
+      to = ":set splitbelow<CR>:split<CR>",
+      mode = mode_nv,
+      opts = { silent = true, noremap = true },
+    },
+    {
+      from = "sh",
+      to = ":set nosplitright<CR>:vsplit<CR>:set splitright<CR>",
+      mode = mode_nv,
+      opts = { silent = true, noremap = true },
+    },
+    {
+      from = "sl",
+      to = ":set splitright<CR>:vsplit<CR>",
+      mode = mode_nv,
+      opts = { silent = true, noremap = true },
+    },
+    { from = "srh", to = "<C-w>b<C-w>K" },
+    { from = "srv", to = "<C-w>b<C-w>H" },
+  }
+
+  for _, mapping in ipairs(mappings) do
+    vim.keymap.set(mapping.mode or "n", mapping.from, mapping.to, mapping.opts or { noremap = true })
+  end
 end
 
 M.set_terminal_keymaps = function()
@@ -269,7 +305,7 @@ M.config = function()
   if lvim.builtin.sidebar.active then
     lvim.keys.normal_mode["E"] = ":SidebarNvimToggle<cr>"
   end
-  lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
+  lvim.keys.normal_mode["<leader><cr>"] = "<cmd>nohlsearch<cr>"
   lvim.keys.normal_mode["Y"] = "y$"
   lvim.keys.normal_mode["gv"] =
     "<cmd>vsplit | lua vim.lsp.buf.definition({on_list = function(items) vim.fn.setqflist({}, 'r', items) vim.cmd('cfirst') end})<cr>"
@@ -506,8 +542,6 @@ M.config = function()
     ["[n"] = { "[[:call search('^(@@ .* @@|[<=>|]{7}[<=>|]@!)', 'bW')<cr>]]", "prev merge conflict" },
   }
 
-  -- Custom keybindings
-  -- =========================================
   M.set_custom_keymaps()
 end
 

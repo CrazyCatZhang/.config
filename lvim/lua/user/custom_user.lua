@@ -6,6 +6,8 @@ M.config = function()
     vim.o.mousefocus = true
     vim.o.mousemoveevent = true
     vim.o.splitkeep = "screen"
+    vim.o.splitright = true
+    vim.o.splitbelow = true
   end
 
   lvim.builtin.lsp_lines = true
@@ -65,8 +67,9 @@ M.config = function()
   lvim.builtin.tabnine = { active = true }
   lvim.builtin.sql_integration.active = true
 
-  -- Custom keybinds
+  -- Custom keybindings
   lvim.lsp.buffer_mappings.normal_mode["K"] = { "5k", "Up 5 lines" }
+
 end
 
 return M
