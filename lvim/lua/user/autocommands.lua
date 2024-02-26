@@ -62,6 +62,8 @@ M.config = function()
     end,
   })
 
+  create_aucmd({ "BufRead", "BufNewFile" }, { pattern = "*.md", command = "setlocal spell" })
+
   if lvim.builtin.sql_integration.active then
     -- Add vim-dadbod-completion in sql files
     create_aucmd("FileType", {
