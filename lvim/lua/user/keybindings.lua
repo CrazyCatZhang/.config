@@ -49,7 +49,7 @@ M.set_custom_keymaps = function()
     { from = "J", to = "5j", mode = mode_nv },
     { from = "H", to = "^", mode = mode_nv },
     { from = "L", to = "$", mode = mode_nv },
-    { from = "K", to = "5k", mode = mode_v },
+    { from = "K", to = "5k", mode = mode_nv },
     {
       from = "sk",
       to = ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>",
