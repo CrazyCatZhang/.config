@@ -218,10 +218,10 @@ sketchy_topbar --add item time right                        \
                            padding_left=8               \
                            padding_right=2              \
                            background.border_width=0    \
-                           label.color=$COLOR_SEVEN     \
+                           label.color="$COLOR_SEVEN"   \
                            shadow=on                    \
                            background.height=24         \
-                           icon=$ICON_CALENDAR          \ 
+                           icon="$ICON_CALENDAR"        \
 
 sketchy_topbar --add bracket clock time date                          \
            --set         clock background.color=$COLOR_FIVE  \
