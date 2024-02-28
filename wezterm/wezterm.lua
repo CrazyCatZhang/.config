@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 -- local launch_menu = {}
 -- local default_shell = "/bin/zsh"
 local padding = {
-	left = "0",
+	left = "1cell",
 	right = "0",
 	top = "0",
 	bottom = "0",
@@ -245,7 +245,7 @@ return {
 	-- disable_default_key_bindings = true,
 	line_height = 1.25,
 	font_size = 16,
-	window_background_opacity = 0.95,
+	window_background_opacity = 0.8,
 	bold_brightens_ansi_colors = false,
 	-- swap_backspace_and_delete = false,
 	use_fancy_tab_bar = false,
@@ -259,4 +259,5 @@ return {
 	hide_mouse_cursor_when_typing = true,
 	pane_focus_follows_mouse = true,
 	enable_tab_bar = true,
+  macos_window_background_blur = 32
 }
