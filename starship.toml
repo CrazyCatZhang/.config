@@ -90,6 +90,17 @@ $character"""
 # Put time prompt on the right
 right_format="""$time"""
 
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+[character]
+success_symbol = "[[♥ ](bold cyan) [➺](bold cyan)](maroon)"
+error_symbol = "[[♥ ](bold red) [➺](bold red)](maroon)"
+vimcmd_symbol = "[[♥ ](bold cyan) [➺](bold cyan)](maroon)"
+
 [aws]
 symbol = "  "
 
@@ -269,17 +280,6 @@ symbol = " "
 
 [zig]
 symbol = " "
-
-# Get editor completions based on the config schema
-"$schema" = 'https://starship.rs/config-schema.json'
-
-# Inserts a blank line between shell prompts
-add_newline = true
-
-[character]
-success_symbol = "[[♥ ](bold cyan) [➺](bold cyan)](maroon)"
-error_symbol = "[[♥ ](bold red) [➺](bold red)](maroon)"
-vimcmd_symbol = "[[♥ ](bold cyan) [➺](bold cyan)](maroon)"
 
 [time]
 disabled = false
