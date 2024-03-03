@@ -74,7 +74,20 @@ M.config = function()
   lvim.builtin.cmp.cmdline.enable = true
 
   -- Custom keybindings
-  lvim.lsp.buffer_mappings.normal_mode["K"] = { "5k"}
+  lvim.lsp.buffer_mappings.normal_mode["K"] = { "5k" }
+
+  vim.g.python3_host_prog = "~/nvim-venv/bin/python"
+  vim.g.ruby_host_prog = "/usr/local/lib/ruby/gems/3.1.0/bin/neovim-ruby-host"
+
+  local pathsToAdd = {
+    os.getenv "HOME" .. "/go/bin",
+    "/usr/local/bin",
+    os.getenv "HOME" .. "/nvim-venv/bin",
+    os.getenv "HOME" .. "/Library/Application Support/Coursier/bin",
+    os.getenv "HOME" .. "/.nix-profile/bin",
+  }
+
+  vim.env.PATH = vim.env.PATH .. ":" .. table.concat(pathsToAdd, ":")
 end
 
 return M

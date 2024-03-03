@@ -607,7 +607,7 @@ M.config = function()
     },
     {
       "SmiteshP/nvim-gps",
-      module_pattern = { "gps", "nvim-gps" },
+      -- module_pattern = { "gps", "nvim-gps" },
       config = function()
         require("user.gps").config()
       end,
@@ -909,6 +909,23 @@ M.config = function()
       event = "VeryLazy",
       config = function()
         require("nvim-surround").setup {}
+      end,
+    },
+    {
+      "preservim/vim-markdown",
+      ft = "markdown",
+      dependencies = { "godlygeek/tabular" },
+    },
+    {
+      "mg979/vim-visual-multi",
+    },
+    {
+      "SirVer/ultisnips",
+      dependencies = {
+        "honza/vim-snippets",
+      },
+      config = function()
+        require("user.snippets").config()
       end,
     },
   }
