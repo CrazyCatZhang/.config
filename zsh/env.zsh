@@ -29,7 +29,7 @@ if [[ ":$PATH:" != *":/Applications/iTerm.app/Contents/Resources:"* ]]; then
     export PATH="/Applications/iTerm.app/Contents/Resources:${PATH}"
 fi
 
-export TERM=xterm-256color
+# export TERM=xterm-256color
 
 export EDITOR=lvim
 
@@ -52,6 +52,14 @@ if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
     export PATH="/usr/local/opt/fzf/bin"
   fi
 fi
+
+export PATH="$PATH:$(gem environment gemdir)/bin"
+
+export PATH="/usr/local/Cellar/perl/5.38.2_1/bin:$PATH"
+
+export PATH=$PATH:$(go env GOPATH)/bin
+
+export PATH="$PATH:/Users/crazycatzhang/Library/Application Support/Coursier/bin"
 
 export PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!seen[$0]++' | sed 's/:$//')
 
