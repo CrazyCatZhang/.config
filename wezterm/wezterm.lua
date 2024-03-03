@@ -9,11 +9,24 @@ local padding = {
 	bottom = "0",
 }
 
+local function get_tab_bar_bg()
+	local _time = os.date("*t")
+	if _time.hour >= 1 and _time.hour < 9 then
+		return "#191724"
+	elseif _time.hour >= 9 and _time.hour < 17 then
+		return "#1A1B26"
+	elseif _time.hour >= 17 and _time.hour < 21 then
+		return "#1E1E2E"
+	elseif _time.hour >= 21 and _time.hour < 24 or _time.hour >= 0 and _time.hour < 1 then
+		return "#1F1F28"
+	end
+end
+
 local SOLID_RIGHT_ARROW = utf8.char(0xe0b0)
 local Grey = "#0f1419"
 local LightGrey = "#191f26"
 
-local TAB_BAR_BG = "#1F2029"
+local TAB_BAR_BG = get_tab_bar_bg()
 local ACTIVE_TAB_BG = "#F4A889"
 local ACTIVE_TAB_FG = "Black"
 local HOVER_TAB_BG = Grey
