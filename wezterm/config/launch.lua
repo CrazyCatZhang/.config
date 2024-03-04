@@ -5,7 +5,6 @@ local options = {
 }
 
 if platform.is_win then
-   options.default_prog = { 'pwsh' }
    options.launch_menu = {
       { label = 'PowerShell Core', args = { 'pwsh' } },
       { label = 'PowerShell Desktop', args = { 'powershell' } },
@@ -24,7 +23,6 @@ elseif platform.is_mac then
       { label = 'Zsh', args = { 'zsh' } },
    }
 elseif platform.is_linux then
-   options.default_prog = { 'zsh' }
    options.launch_menu = {
       { label = 'Bash', args = { 'bash' } },
       { label = 'Fish', args = { 'fish' } },
