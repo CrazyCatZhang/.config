@@ -1,6 +1,6 @@
 # Which is equivalent to
 format = """
- $username\
+$username\
 $hostname\
 $localip\
 $shlvl\
@@ -97,9 +97,9 @@ right_format="""$time"""
 add_newline = true
 
 [character]
-success_symbol = "[[ ♥ ](bold cyan) [➺](bold cyan)](maroon)"
-error_symbol = "[[ ♥ ](bold red) [➺](bold red)](maroon)"
-vimcmd_symbol = "[[ ♥ ](bold cyan) [➺](bold cyan)](maroon)"
+success_symbol = "[[♥ ](bold cyan) [➺](bold cyan)](maroon)"
+error_symbol = "[[♥ ](bold red) [➺](bold red)](maroon)"
+vimcmd_symbol = "[[♥ ](bold cyan) [➺](bold cyan)](maroon)"
 
 [aws]
 symbol = "  "
