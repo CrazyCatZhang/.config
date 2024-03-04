@@ -918,16 +918,7 @@ M.config = function()
     },
     {
       "mg979/vim-visual-multi",
-    },
-    {
-      "SirVer/ultisnips",
-      dependencies = {
-        "honza/vim-snippets",
-      },
-      config = function()
-        require("user.snippets").config()
-      end,
-    },
+    }
   }
 end
 
