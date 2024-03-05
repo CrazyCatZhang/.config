@@ -23,8 +23,8 @@ return {
    webgpu_preferred_adapter = gpu_adapters:pick(),
 
    -- color scheme
-   color_scheme = get_theme(),
    colors = colors,
+   color_scheme = get_theme(),
 
    -- tab bar
    enable_tab_bar = true,
@@ -49,7 +49,7 @@ return {
       -- font_size = fonts.font_size,
    },
    window_decorations = 'RESIZE',
-   window_background_opacity = 0.8,
+   -- window_background_opacity = 0.8,
 
    inactive_pane_hsb = {
       saturation = 0.7,
