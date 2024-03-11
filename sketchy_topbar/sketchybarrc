@@ -177,14 +177,12 @@ sketchy_topbar --add bracket notifications slack mail taskwarrior timewarrior  \
 
 sketchy_topbar --add item seperator.l2 left                   \
            --set      seperator.l2 padding_left=2         \
-                                   padding_right=44        \
+                                   padding_right=10        \
                                    background.drawing=off \
                                    icon.drawing=off       \
                                    label.drawing=off
 
-
-source "$ITEM_DIR/spotify.sh"   # spotify widget
-source "$ITEM_DIR/volume.sh"    # volume monitor
+source "$ITEM_DIR/playing.sh"   # playing on spotify
 
 
 ##### Adding Right Items #####
@@ -260,10 +258,6 @@ sketchy_topbar --add item  ip_address right                              \
 sketchy_topbar --add bracket status ip_address battery           \
            --set         status background.color=$COLOR_FIVE   \
                                 background.border_color=$COLOR_SEVEN
-
-
-
-source "$ITEM_DIR/playing.sh"   # playing on spotify
 
 sketchy_topbar --add item seperator.r2 right                  \
            --set      seperator.r2 padding_left=4         \
