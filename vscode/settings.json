@@ -5,7 +5,7 @@
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Material Theme Ocean",
   "workbench.editor.tabSizing": "shrink",
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "vscode-icons",
   "workbench.list.smoothScrolling": true,
   "workbench.editor.wrapTabs": true,
   "workbench.colorCustomizations": {
@@ -92,7 +92,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.lineNumbers": "relative",
   "editor.fontSize": 18,
-  "editor.fontFamily": "JetBrains Mono,Menlo, Monaco, 'Courier New', monospace,MesloLGS NF",
+  "editor.fontFamily": "MonaspiceRn Nerd Font Propo,JetBrains Mono,Menlo, Monaco, 'Courier New', monospace,MesloLGS NF",
   "editor.fontLigatures": true,
   "editor.unicodeHighlight.allowedLocales": {
     "zh-hans": true,
@@ -111,7 +111,7 @@
   "editor.acceptSuggestionOnEnter": "smart",
   "editor.suggestSelection": "recentlyUsed",
   "editor.smoothScrolling": true,
-  "editor.fontWeight": "normal",
+  "editor.fontWeight": "bold",
   "editor.tabSize": 2,
   "editor.tabCompletion": "on",
   "editor.inlineSuggest.enabled": true,
@@ -338,6 +338,14 @@
     {
       "before": ["J"],
       "after": ["5", "j"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
     },
     {
       "before": [";"],
@@ -686,6 +694,14 @@
       "after": ["5", "j"]
     },
     {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
       "before": ["<leader>", "n"],
       "commands": ["editor.action.codeAction"]
     },
@@ -769,7 +785,8 @@
   "errorLens.enabledDiagnosticLevels": ["warning", "error", "hint"],
   "errorLens.gutterIconSize": "auto",
   "errorLens.delay": 500,
-  "errorLens.fontWeight": "normal",
+  "errorLens.fontWeight": "bold",
+  "errorLens.fontStyleItalic": true,
 
   // ----------- Project Manager Settings -----------
   "projectManager.git.baseFolders": ["~/Github"],
@@ -800,7 +817,7 @@
   "better-comments.highlightPlainText": true,
 
   // ----------- Animations Settings -----------
-  "animations.Enabled": true,
+  "animations.Enabled": false,
   "animations.Command-Palette": "Slide",
   "animations.Install-Method": "Apc Customize UI++",
   "animations.CursorAnimation": true,
@@ -814,6 +831,15 @@
   "gitlens.statusBar.enabled": false,
   "gitlens.changes.toggleMode": "window",
   "gitlens.heatmap.toggleMode": "window",
-  "workbench.statusBar.visible": false,
-  "gitlens.fileAnnotations.dismissOnEscape": false
+  "gitlens.fileAnnotations.dismissOnEscape": false,
+  "update.mode": "default",
+  "console-ninja.featureSet": "Community",
+
+  // ----------- Markdown Preview Settings -----------
+  "markdown-preview-enhanced.previewColorScheme": "editorColorScheme",
+  "markdown-preview-enhanced.previewTheme": "atom-dark.css",
+
+  "javascript.validate.enable": false,
+  "http.proxy": "http://127.0.0.1:7890",
+  "workbench.statusBar.visible": false
 }
