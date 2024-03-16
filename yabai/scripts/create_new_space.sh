@@ -4,7 +4,7 @@
 ## arg[0] == 1, 将当前窗口移动至新的space
 
 if [ ${1:-} = "1" ]; then
-	moveCurrentWindow="yes"
+  moveCurrentWindow="yes"
 fi
 
 yabai -m space --create
@@ -13,8 +13,7 @@ yabai -m space --create
 spaceIndex="$(yabai -m query --spaces --display | jq 'map(select (."is-native-fullscreen" == false))[-1].index')"
 
 if [[ ! -z $moveCurrentWindow && ! -z $windowId && $windowId != 'null' ]]; then
-	yabai -m window --space ${spaceIndex}
+  yabai -m window --space ${spaceIndex}
 fi
 
 yabai -m space --focus ${spaceIndex}
-$HOME/.config/yabai/scripts/change-random-wallpaper.sh
