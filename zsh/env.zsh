@@ -1,7 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
-
 if [[ ":$PATH:" != *":/usr/local/opt/openjdk/bin:"* ]]; then
     export PATH="/usr/local/opt/openjdk/bin:$PATH"
 fi
