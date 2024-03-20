@@ -918,7 +918,11 @@ M.config = function()
     },
     {
       "mg979/vim-visual-multi",
-    }
+    },
+    {
+      "nvim-neotest/nvim-nio",
+      enabled = lvim.builtin.dap.active,
+    },
   }
 end
 
