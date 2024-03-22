@@ -152,7 +152,7 @@ local keys = {
    -- custom
    {
       key = '1',
-      mods = 'CMD',
+      mods = 'ALT',
       action = wezterm.action.Multiple({
          wezterm.action.SendKey({ key = 'Home' }),
          wezterm.action.SendKey({ key = '1' }),
@@ -160,7 +160,7 @@ local keys = {
    },
    {
       key = '2',
-      mods = 'CMD',
+      mods = 'ALT',
       action = wezterm.action.Multiple({
          wezterm.action.SendKey({ key = 'Home' }),
          wezterm.action.SendKey({ key = '2' }),
@@ -168,7 +168,7 @@ local keys = {
    },
    {
       key = '3',
-      mods = 'CMD',
+      mods = 'ALT',
       action = wezterm.action.Multiple({
          wezterm.action.SendKey({ key = 'Home' }),
          wezterm.action.SendKey({ key = '3' }),
@@ -176,7 +176,7 @@ local keys = {
    },
    {
       key = '4',
-      mods = 'CMD',
+      mods = 'ALT',
       action = wezterm.action.Multiple({
          wezterm.action.SendKey({ key = 'Home' }),
          wezterm.action.SendKey({ key = '4' }),
@@ -184,7 +184,7 @@ local keys = {
    },
    {
       key = '5',
-      mods = 'CMD',
+      mods = 'ALT',
       action = wezterm.action.Multiple({
          wezterm.action.SendKey({ key = 'Home' }),
          wezterm.action.SendKey({ key = '5' }),
@@ -192,7 +192,7 @@ local keys = {
    },
    {
       key = '6',
-      mods = 'CMD',
+      mods = 'ALT',
       action = wezterm.action.Multiple({
          wezterm.action.SendKey({ key = 'Home' }),
          wezterm.action.SendKey({ key = '6' }),
@@ -200,7 +200,7 @@ local keys = {
    },
    {
       key = '7',
-      mods = 'CMD',
+      mods = 'ALT',
       action = wezterm.action.Multiple({
          wezterm.action.SendKey({ key = 'Home' }),
          wezterm.action.SendKey({ key = '7' }),
